@@ -60,8 +60,8 @@
 		<!-- 検索条件の入力 -->
 		<h1 id = "title">ゲーム管理システム</h1>
 		<form id="searchForm"  method="post" action="/kenshu/game/list"  name="kakunin"   onsubmit = "return checkForm()">
-			<p>ゲームタイトル:<input type="text" name="gameTitle"  size="100"  maxlength="50" value="<%=conditionBean.getGameTitle()  %>"></p>
-			<p>ハードウェア &nbsp; :<input type="text" name="hardware" size="100"  maxlength="50"  value="<%=conditionBean.getHardware()  %>">
+			<p>ゲームタイトル:<input type="text" name="gameTitle"  size="100"  maxlength="50" ></p>
+			<p>ハードウェア &nbsp; :<input type="text" name="hardware" size="100"  maxlength="50" >
 
 		<!-- 検索・新規のボタン設定 -->
 			<input type="button"   value="新規" name="new"  onclick ="goInsert();">
@@ -85,28 +85,19 @@
 				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th><th></th><th></th>
 			</tr>
 
-		<!-- 検索した数だけ表示する処理 -->
-			<%for(int i = 0 ; i < gameList.size();i++){ %> 
-			<%GameBean game = (GameBean)gameList.get(i); %>
-			<%if(i == 0){%>
-				<p>検索件数:<%=game.getSearch_count()%>件</p>
-			<%} %>
 
 		<!-- 検索結果の表示 -->
-			<form id="deleteForm<%=i %>"  method="post"  action="/kenshu/game/delete"  name="deleteForm<%=i %>" >
-					<input type="hidden" name = "impression" value="<%=game.getImpression()%>">
+					<input type="hidden" name = "impression" >
 				<tr>
-					<td align="right"><input type="hidden" name = "id" value="<%=game.getGameId()%>"><%=game.getGameId()%></td>
-					<td><input type="hidden" name = "title" value="<%=game.getGameTitle()%>"><%=game.getGameTitle()%></td>
-					<td><input type="hidden" name = "hardware" value="<%=game.getHardWare()%>"><%=game.getHardWare()%></td>
-					<td align="right"><input type="hidden" name = "character" value="<%=game.getCharacter_count()%>"><%=game.getCharacter_count()%></td>
+					<td align="right"><input type="hidden" name = "id" ></td>
+					<td><input type="hidden" name = "title" ></td>
+					<td><input type="hidden" name = "hardware" ></td>
+					<td align="right"><input type="hidden" name = "character" ></td>
 
 		<!-- 修正・削除のボタン設定 -->
-					<td><input type="submit"  name="update" value="修正"  onclick ="goUpDate(<%=i %>);" ></td>
+					<td><input type="submit"  name="update" value="修正"  onclick ="goUpDate();" ></td>
 					<td><input type="submit"  name="del" value="削除" onclick="return confirm('削除しますか?');"/></td>
 				</tr>
-			</form>
-			<%} %>
 		</table>
 
 
