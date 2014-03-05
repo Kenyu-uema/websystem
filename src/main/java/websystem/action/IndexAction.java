@@ -15,9 +15,18 @@
  */
 package websystem.action;
 
+import javax.annotation.Resource;
+
+import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
+import websystem.form.GameSearchConditionBean;
+
 public class IndexAction {
+
+	@ActionForm
+	@Resource
+	protected GameSearchConditionBean conditionBean;
 
 	@Execute(validator = false)
 	public String index() {

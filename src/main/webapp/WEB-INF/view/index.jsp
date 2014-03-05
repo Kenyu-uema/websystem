@@ -87,17 +87,19 @@
 
 
 		<!-- 検索結果の表示 -->
-					<input type="hidden" name = "impression" >
+			<form id="deleteForm<%=i %>"  method="post"  action="/kenshu/game/delete"  name="deleteForm<%=i %>" >
+					<input type="hidden" name = "impression" value="<%=game.getImpression()%>">
 				<tr>
-					<td align="right"><input type="hidden" name = "id" ></td>
-					<td><input type="hidden" name = "title" ></td>
-					<td><input type="hidden" name = "hardware" ></td>
-					<td align="right"><input type="hidden" name = "character" ></td>
+					<td align="right"><input type="hidden" name = "id" value="<%=game.getGameId()%>"><%=game.getGameId()%></td>
+					<td><input type="hidden" name = "title" value="<%=game.getGameTitle()%>"><%=game.getGameTitle()%></td>
+					<td><input type="hidden" name = "hardware" value="<%=game.getHardWare()%>"><%=game.getHardWare()%></td>
+					<td align="right"><input type="hidden" name = "character" value="<%=game.getCharacter_count()%>"><%=game.getCharacter_count()%></td>
 
 		<!-- 修正・削除のボタン設定 -->
-					<td><input type="submit"  name="update" value="修正"  onclick ="goUpDate();" ></td>
+					<td><input type="submit"  name="update" value="修正"  onclick ="goUpDate(<%=i %>);" ></td>
 					<td><input type="submit"  name="del" value="削除" onclick="return confirm('削除しますか?');"/></td>
 				</tr>
+			</form>
 		</table>
 
 
