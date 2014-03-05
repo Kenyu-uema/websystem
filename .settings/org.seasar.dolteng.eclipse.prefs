@@ -1,0 +1,9 @@
+DaoType=S2JDBC
+DefaultResourcePath=/WebSystem/src/main/resources
+DefaultRootPackage=websystem
+DefaultSrcPath=/WebSystem/src/main/java
+ServletPath=/WebSystem
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+WebServer=http\://localhost\:8081
+eclipse.preferences.version=1
