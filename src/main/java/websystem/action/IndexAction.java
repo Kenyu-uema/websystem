@@ -20,16 +20,17 @@ import javax.annotation.Resource;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
-import websystem.form.GameSearchConditionBean;
+import websystem.form.GameSearchConditionBeanForm;
 
 public class IndexAction {
 
 	@ActionForm
 	@Resource
-	protected GameSearchConditionBean conditionBean;
+	protected GameSearchConditionBeanForm conditionBeanForm;
 
 	@Execute(validator = false)
 	public String index() {
 		return "index.jsp";
+
 	}
 }
