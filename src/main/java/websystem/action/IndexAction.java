@@ -15,35 +15,26 @@
  */
 package websystem.action;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
-import org.seasar.extension.jdbc.JdbcManager;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
-import websystem.dto.GameBean;
 import websystem.form.GameSearchConditionBeanForm;
+import websystem.service.GameSearchService;
 
 public class IndexAction {
-
-	private static final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/serach.sql";
-
-	@ActionForm
-	@Resource
-	protected GameSearchConditionBeanForm conditionBeanForm;
 
 	@Execute(validator = false)
 	public String index() {
 		return "index.jsp";
 	}
 
-	public String getSqlOfSelectGameList(GameSearchConditionBeanForm conditionBeanForm){
-		List<GameBean> results = conditionBeanForm
-		.selectBySplFile(GameSearchConditionBeanForm.class, SQL-FILE)
-		System.out.println(sql.toString());
+	@Resource
+	protected GameSearchService gameSearchService;
 
-		return sql.toString();
-	}
+	@ActionForm
+	@Resource
+	protected GameSearchConditionBeanForm conditionBeanForm;
+
 }
