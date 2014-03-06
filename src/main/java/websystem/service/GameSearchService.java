@@ -24,6 +24,7 @@ public class GameSearchService {
 	}
 
 	public static String SqlOfSelectGameList(JdbcManager jdbcManager) {
+
 		List<GameBean> sql = jdbcManager
 				.selectBySqlFile(GameBean.class, SQL_FILE)
 				.getResultList();

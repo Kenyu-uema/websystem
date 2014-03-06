@@ -37,4 +37,10 @@ public class IndexAction {
 	@Resource
 	protected GameSearchConditionBeanForm conditionBeanForm;
 
+	@Execute(input = "index.jsp")
+    public String submit() {
+        conditionBeanForm.gameId
+        conditionBeanForm.gameTitle
+        return "index.jsp";
+    }
 }
