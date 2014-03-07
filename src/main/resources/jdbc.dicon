@@ -22,7 +22,7 @@
 	-->
 	
 	<!-- for H2 -->
-	<component name="xaDataSource"
+	<!--<component name="xaDataSource"
 		class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
 		<property name="driverClassName">
 			"org.h2.Driver"
@@ -36,22 +36,21 @@
 			@org.seasar.framework.util.DriverManagerUtil@deregisterAllDrivers()
 		</destroyMethod>
 	</component>
+	-->
 	
 	<!-- for Oracle -->
-	<!--
 	<component name="xaDataSource"
 		class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
 		<property name="driverClassName">
 			"oracle.jdbc.driver.OracleDriver"
 		</property>
 		<property name="URL">
-			"jdbc:oracle:thin:@xxx:1521:xxx"
+			"jdbc:oracle:thin:@localhost:1521:xe"
 		</property>
-		<property name="user">"xxx"</property>
-		<property name="password">"xxx"</property>
+		<property name="user">"training"</property>
+		<property name="password">"training"</property>
 	</component>
-	-->
-
+	
 	<!-- for DB2 -->
 	<!--
 	<component name="xaDataSource"
