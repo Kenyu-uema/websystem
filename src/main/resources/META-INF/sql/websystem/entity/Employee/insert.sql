@@ -1,11 +1,7 @@
-select name, salary from employee
-/*BEGIN*/
-where
-/*IF minSalary != null*/
-salary >= /*minSalary*/1000
-/*END*/
-/*IF maxSalary != null*/
-and salary <= /*maxSalary*/2000
-/*END*/
-/*END*/
-order by salary
+insert into
+	m_game
+	(game_id,game_title,hardware,impression,modify_date,modify_user,create_date,create_user)
+select
+	max(game_id) + 1, /*GameTitle*/, /*Hardware*/ , /*Impression*/, to_date(sysdate,'yy-mm-dd'),'TAFS',to_date(sysdate,'yy-mm-dd'),'TAFS'
+from 
+	m_game

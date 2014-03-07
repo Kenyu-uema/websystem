@@ -1,9 +1,8 @@
-select name, salary from employee
+update
+	m_game
+set
+	game_title = /*GameTitle*/, hardware = /*Hardware*/, 
+	impression = /*Impression*/, modify_date = to_date(sysdate,'yy-mm-dd'), 
+	modify_user = 'TAFS', create_date = to_date(sysdate,'yy-mm-dd'), create_user = 'TAFS'
 where
-/*IF minSalary != null*/
-salary >= /*minSalary*/1000
-/*END*/
-/*IF maxSalary != null*/
-and salary <= /*maxSalary*/2000
-/*END*/
-order by salary
+	game_id = /*GameId*/

@@ -1,5 +1,5 @@
-select name, salary from employee
+delete
+from
+	m_game
 where
-salary >= /*minSalary*/1000
-and salary <= /*maxSalary*/2000
-order by salary
+	game_id = /*GameId*/
