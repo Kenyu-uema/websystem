@@ -29,6 +29,7 @@ import websystem.service.GameSearchService;
 public class IndexAction {
 
 	public List<GameBean> GameBeanList;
+	public String result;
 
 	@Execute(validator = false)
 	public String index() {
@@ -40,12 +41,11 @@ public class IndexAction {
 
 	@ActionForm
 	@Resource
-	protected GameSearchConditionBeanForm conditionBeanForm;
+	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
 
 	@Execute(input = "index.jsp")
-	public String submit() {
-		this.GameBeanList = GameSearchService.getSqlOfSelectGameList(conditionBeanForm.gameTitle,
-				conditionBeanForm.hardWare);
+	public String search() {
+		this.GameBeanList = GameSearchService.getSqlOfSelectGameList();
 		return "index.jsp";
 	}
 }

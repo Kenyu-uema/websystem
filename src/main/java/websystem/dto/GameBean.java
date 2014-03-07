@@ -4,31 +4,31 @@ public class GameBean {
 	/**
 	 * ゲームID 
 	 */
-	private String gameId;
+	public String gameId;
 
 	/**
 	 * ゲームタイトル
 	 */
-	private String gameTitle;
+	public String gameTitle;
 
 	/**
 	 * ハードウェア
 	 */
-	private String hardWare;
+	public String hardWare;
 
 	/**
 	 * 感想
 	 */
-	private String impression;
+	public String impression;
 
 	/**
 	 * キャラクター数
 	 */
-	private String character_count;
+	public String character_count;
 
 	/**
 	 * 検索件数
 	 */
-	private String search_count;
+	public String search_count;
 
 }

@@ -16,6 +16,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_dependants.add("/WEB-INF/view/common/common.jsp");
   }
 
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody;
+
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -24,11 +28,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.release();
+    _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.release();
+    _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -94,28 +104,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<!-- 入力チェック -->\r\n");
       out.write("\t\t\t<script type=\"text/javascript\">\r\n");
       out.write("\t\t\t\tfunction checkForm(){\r\n");
-      out.write("\t\t\t\tif(document.kakunin.gameTitle.value == \"\"){\r\n");
-      out.write("\t\t\t\t\talert('ゲームタイトルを入力してください');\r\n");
-      out.write("\t\t\t\t\tdocument.kakunin.gameTitle.focus();\r\n");
-      out.write("\t\t\t\t\treturn false;\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\t\t\t\tif(document.kakunin.hardware.value == \"\"){\r\n");
-      out.write("\t\t\t\t\talert('ハードウェアを入力してください');\r\n");
-      out.write("\t\t\t\t\tdocument.kakunin.hardware.focus();\r\n");
-      out.write("\t\t\t\t\treturn false;\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\t\t\t\t\treturn true;\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\r\n");
-      out.write("\t\t//新規登録画面へ\r\n");
-      out.write("\t\t\t\tfunction goInsert(){\r\n");
-      out.write("\t\t\t\t\t location.href=\"http://localhost:8081/kenshu/game/insert\";\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\r\n");
-      out.write("\t\t//修正画面へ\r\n");
-      out.write("\t\t\t\tfunction goUpDate(i){\r\n");
-      out.write("\t\t\t\t\tdocument.getElementById('deleteForm' + i).method = \"get\";\r\n");
-      out.write("\t\t\t\t\tdocument.getElementById('deleteForm' + i).action = \"/kenshu/game/update\";\r\n");
+      out.write("\t\t\t\t\tif(document.kakunin.gameTitle.value == \"\"){\r\n");
+      out.write("\t\t\t\t\t\talert('ゲームタイトルを入力してください');\r\n");
+      out.write("\t\t\t\t\t\tdocument.kakunin.gameTitle.focus();\r\n");
+      out.write("\t\t\t\t\t\treturn false;\r\n");
+      out.write("\t\t\t\t\t}\r\n");
+      out.write("\t\t\t\t\tif(document.kakunin.hardware.value == \"\"){\r\n");
+      out.write("\t\t\t\t\t\talert('ハードウェアを入力してください');\r\n");
+      out.write("\t\t\t\t\t\tdocument.kakunin.hardware.focus();\r\n");
+      out.write("\t\t\t\t\t\treturn false;\r\n");
+      out.write("\t\t\t\t\t}\r\n");
+      out.write("\t\t\t\treturn true;\r\n");
       out.write("\t\t\t\t}\r\n");
       out.write("\t\t</script>\r\n");
       out.write("\t</head>\r\n");
@@ -124,14 +123,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\t\t<!-- 検索条件の入力 -->\r\n");
       out.write("\t\t<h1 id = \"title\">ゲーム管理システム</h1>\r\n");
-      out.write("\t\t<form id=\"searchForm\"  method=\"post\" action=\"/kenshu/game/list\"  name=\"kakunin\"   onsubmit = \"return checkForm()\">\r\n");
-      out.write("\t\t\t<p>ゲームタイトル:<input type=\"text\" name=\"gameTitle\"  size=\"100\"  maxlength=\"50\" ></p>\r\n");
-      out.write("\t\t\t<p>ハードウェア &nbsp; :<input type=\"text\" name=\"hardware\" size=\"100\"  maxlength=\"50\" >\r\n");
+      out.write("\t\t");
+      if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
+        return;
       out.write("\r\n");
-      out.write("\t\t<!-- 検索・新規のボタン設定 -->\r\n");
-      out.write("\t\t\t<input type=\"button\"   value=\"新規\" name=\"new\"  onclick =\"goInsert();\">\r\n");
-      out.write("\t\t\t<input type=\"submit\"  value=\"検索\"  name=\"search\" onclick=\"return confirm('検索しますか?');\"/></p>\r\n");
-      out.write("\t\t</form>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t\t<!-- エラーの表示 -->\r\n");
@@ -160,8 +155,13 @@ if(request.getAttribute("error") != null){
       out.write("\t\t\t<caption>ゲームマスタ一覧</caption>\r\n");
       out.write("\t\t\t<tr>\r\n");
       out.write("\t\t\t\t<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th><th></th><th></th>\r\n");
-      out.write("\t\t\t</tr>\r\n");
       out.write("\r\n");
+      out.write("\t\t<!-- 検索結果の表示 -->\r\n");
+      out.write("\t\t\t\t\t<!-- <td align=\"right\"><input type=\"hidden\" name = \"id\" value=\"<GameBean.GameId()%>\"> (GameBean.GameId())}</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"hidden\" name = \"title\" value=\"<GameBean.GameTitle()%>\"> (GameBean.GameTitle())}</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"hidden\" name = \"hardware\" value=\"<GameBean.HardWare()%>\"> (GameBean.HardWare())}</td>\r\n");
+      out.write("\t\t\t\t\t<td align=\"right\"><input type=\"hidden\" name = \"character\" value=\"<GameBean.Character_count()%>\"> (GameBean.Character_count())}</td>\r\n");
+      out.write("\t\t\t\t</tr> -->\r\n");
       out.write("\t\t</table>\r\n");
       out.write("\t</body>\r\n");
       out.write("</html>");
@@ -176,5 +176,99 @@ if(request.getAttribute("error") != null){
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_s_005fform_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:form
+    org.seasar.struts.taglib.S2FormTag _jspx_th_s_005fform_005f0 = (org.seasar.struts.taglib.S2FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.get(org.seasar.struts.taglib.S2FormTag.class);
+    _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fform_005f0.setParent(null);
+    // /WEB-INF/view/index.jsp(51,2) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f0.setMethod("post");
+    // /WEB-INF/view/index.jsp(51,2) name = onsubmit type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f0.setOnsubmit("return checkForm()");
+    int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
+    if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("\t\t\t<p>ゲームタイトル:");
+        if (_jspx_meth_html_005ftext_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("</p>\r\n");
+        out.write("\t\t\t<p>ハードウェア &nbsp; :");
+        if (_jspx_meth_html_005ftext_005f1(_jspx_th_s_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("\t\t<!-- 検索・新規のボタン設定 -->\r\n");
+        out.write("\t\t\t<input type=\"button\"   value=\"新規\" name=\"new\"  onclick =\"goInsert();\">\r\n");
+        out.write("\t\t\t<input type=\"submit\"  value=\"検索\"  name=\"search\" onclick=\"return confirm('検索しますか?');\"/></p>\r\n");
+        out.write("\t\t");
+        int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_s_005fform_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.reuse(_jspx_th_s_005fform_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.reuse(_jspx_th_s_005fform_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_html_005ftext_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  html:text
+    org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f0 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
+    _jspx_th_html_005ftext_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_html_005ftext_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
+    // /WEB-INF/view/index.jsp(52,14) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f0.setSize("100");
+    // /WEB-INF/view/index.jsp(52,14) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f0.setMaxlength("50");
+    // /WEB-INF/view/index.jsp(52,14) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f0.setProperty("gameTitle");
+    // /WEB-INF/view/index.jsp(52,14) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f0.setValue("");
+    int _jspx_eval_html_005ftext_005f0 = _jspx_th_html_005ftext_005f0.doStartTag();
+    if (_jspx_th_html_005ftext_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.reuse(_jspx_th_html_005ftext_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.reuse(_jspx_th_html_005ftext_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_html_005ftext_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  html:text
+    org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f1 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
+    _jspx_th_html_005ftext_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_html_005ftext_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
+    // /WEB-INF/view/index.jsp(53,21) name = name type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f1.setName("hardware");
+    // /WEB-INF/view/index.jsp(53,21) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f1.setSize("100");
+    // /WEB-INF/view/index.jsp(53,21) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f1.setMaxlength("50");
+    // /WEB-INF/view/index.jsp(53,21) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f1.setProperty("hardWare");
+    // /WEB-INF/view/index.jsp(53,21) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005ftext_005f1.setValue("");
+    int _jspx_eval_html_005ftext_005f1 = _jspx_th_html_005ftext_005f1.doStartTag();
+    if (_jspx_th_html_005ftext_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.reuse(_jspx_th_html_005ftext_005f1);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.reuse(_jspx_th_html_005ftext_005f1);
+    return false;
   }
 }

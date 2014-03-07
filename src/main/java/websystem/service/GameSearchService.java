@@ -5,8 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.seasar.extension.jdbc.JdbcManager;
-import org.seasar.framework.container.SingletonS2Container;
-import org.seasar.framework.container.factory.SingletonS2ContainerFactory;
 
 import websystem.dto.GameBean;
 
@@ -17,9 +15,9 @@ public class GameSearchService {
 
 	private static final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/serach.sql";
 
-	public static List<GameBean> getSqlOfSelectGameList(String gameTitle, String hardWare) {
+	public static List<GameBean> getSqlOfSelectGameList() {
 
-		return jdbcManager.selectBySqlFile(GameBean.class, SQL_FILE,)
+		return jdbcManager.selectBySqlFile(GameBean.class, SQL_FILE, gameSearchconditionBeanForm)
 				.getResultList();
 
 	}
