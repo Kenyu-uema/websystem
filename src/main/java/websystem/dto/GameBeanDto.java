@@ -1,6 +1,6 @@
 package websystem.dto;
 
-public class GameBean {
+public class GameBeanDto {
 	/**
 	 * ゲームID 
 	 */

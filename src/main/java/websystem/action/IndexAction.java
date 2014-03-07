@@ -22,14 +22,15 @@ import javax.annotation.Resource;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
-import websystem.dto.GameBean;
+import websystem.dto.GameBeanDto;
 import websystem.form.GameSearchConditionBeanForm;
 import websystem.service.GameSearchService;
 
 public class IndexAction {
 
-	public List<GameBean> GameBeanList;
-	public String result;
+	public List<GameBeanDto> GameBeanList;
+	public String gaemtitle;
+	public String hardware;
 
 	@Execute(validator = false)
 	public String index() {
@@ -45,7 +46,10 @@ public class IndexAction {
 
 	@Execute(input = "index.jsp")
 	public String search() {
-		this.GameBeanList = GameSearchService.getSqlOfSelectGameList();
+		gaemtitle = gameSearchconditionBeanForm.gameTitle;
+		hardware = gameSearchconditionBeanForm.hardWare;
+
+		this.GameBeanList = GameSearchService.getSqlOfSelectGameList(gaemtitle, hardware);
 		return "index.jsp";
 	}
 }

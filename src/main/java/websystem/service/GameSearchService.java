@@ -6,7 +6,8 @@ import javax.annotation.Resource;
 
 import org.seasar.extension.jdbc.JdbcManager;
 
-import websystem.dto.GameBean;
+import websystem.dto.GameBeanDto;
+import websystem.dto.GameBeanParam;
 
 public class GameSearchService {
 
@@ -15,9 +16,13 @@ public class GameSearchService {
 
 	private static final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/serach.sql";
 
-	public static List<GameBean> getSqlOfSelectGameList() {
+	public static List<GameBeanDto> getSqlOfSelectGameList(String gameTitle, String hardWare) {
 
-		return jdbcManager.selectBySqlFile(GameBean.class, SQL_FILE, gameSearchconditionBeanForm)
+		GameBeanParam param = new GameBeanParam();
+		param.gameTitle = gameTitle;
+		param.hardWare = hardWare;
+
+		return jdbcManager.selectBySqlFile(GameBeanDto.class, SQL_FILE, param)
 				.getResultList();
 
 	}
