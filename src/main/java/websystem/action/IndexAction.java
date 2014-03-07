@@ -15,15 +15,20 @@
  */
 package websystem.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
+import websystem.dto.GameBean;
 import websystem.form.GameSearchConditionBeanForm;
 import websystem.service.GameSearchService;
 
 public class IndexAction {
+
+	public List<GameBean> GameBeanList;
 
 	@Execute(validator = false)
 	public String index() {
@@ -38,9 +43,9 @@ public class IndexAction {
 	protected GameSearchConditionBeanForm conditionBeanForm;
 
 	@Execute(input = "index.jsp")
-    public String submit() {
-        conditionBeanForm.gameId
-        conditionBeanForm.gameTitle
-        return "index.jsp";
-    }
+	public String submit() {
+		this.GameBeanList = GameSearchService.getSqlOfSelectGameList(conditionBeanForm.gameTitle,
+				conditionBeanForm.hardWare);
+		return "index.jsp";
+	}
 }
