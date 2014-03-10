@@ -1,6 +1,5 @@
 package websystem.dto;
 
-
 public class GameBeanParam {
 
 	public String gameTitle;
