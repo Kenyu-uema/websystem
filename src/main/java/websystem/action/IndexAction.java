@@ -28,7 +28,7 @@ import websystem.service.GameSearchService;
 
 public class IndexAction {
 
-	public List<GameBeanDto> GameBeanList;
+	public List<GameBeanDto> gameBeanList;
 	public String gaemtitle;
 	public String hardware;
 
@@ -49,7 +49,7 @@ public class IndexAction {
 		gaemtitle = gameSearchconditionBeanForm.gameTitle;
 		hardware = gameSearchconditionBeanForm.hardWare;
 
-		this.GameBeanList = GameSearchService.getSqlOfSelectGameList(gaemtitle, hardware);
+		this.gameBeanList = gameSearchService.getSqlOfSelectGameList(gaemtitle, hardware);
 		return "index.jsp";
 	}
 }

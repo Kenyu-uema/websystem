@@ -12,11 +12,11 @@ import websystem.dto.GameBeanParam;
 public class GameSearchService {
 
 	@Resource
-	protected static JdbcManager jdbcManager;
+	protected JdbcManager jdbcManager;
 
-	private static final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/serach.sql";
+	private static final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/search.sql";
 
-	public static List<GameBeanDto> getSqlOfSelectGameList(String gameTitle, String hardWare) {
+	public List<GameBeanDto> getSqlOfSelectGameList(String gameTitle, String hardWare) {
 
 		GameBeanParam param = new GameBeanParam();
 		param.gameTitle = gameTitle;

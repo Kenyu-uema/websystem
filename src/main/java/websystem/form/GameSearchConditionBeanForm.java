@@ -14,4 +14,16 @@ public class GameSearchConditionBeanForm {
 	 */
 	@Required
 	public String hardWare;
+
+	/**
+	 * 感想
+	 */
+	@Required
+	private String impression;
+
+	@Required
+	/**
+	 * ゲームID
+	 */
+	private String gameId;
 }

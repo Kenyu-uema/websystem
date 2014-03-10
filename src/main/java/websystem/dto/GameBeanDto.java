@@ -30,5 +30,4 @@ public class GameBeanDto {
 	 * 検索件数
 	 */
 	public String search_count;
-
 }
