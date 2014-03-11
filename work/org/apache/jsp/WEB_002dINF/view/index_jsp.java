@@ -7,6 +7,12 @@ import javax.servlet.jsp.*;
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+static private org.apache.jasper.runtime.ProtectedFunctionMapper _jspx_fnmap_0;
+
+static {
+  _jspx_fnmap_0= org.apache.jasper.runtime.ProtectedFunctionMapper.getMapForFunction("f:h", org.seasar.struts.taglib.S2Functions.class, "h", new Class[] {java.lang.Object.class});
+}
+
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
@@ -154,14 +160,22 @@ if(request.getAttribute("error") != null){
       out.write("\t\t<table class=\"float-left\" >\r\n");
       out.write("\t\t\t<caption>ゲームマスタ一覧</caption>\r\n");
       out.write("\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th><th></th><th></th>\r\n");
+      out.write("\t\t\t\t<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th>\r\n");
       out.write("\r\n");
       out.write("\t\t<!-- 検索結果の表示 -->\r\n");
-      out.write("\t\t\t\t\t<!-- <td align=\"right\"><input type=\"hidden\" name = \"id\" value=\"<GameBean.GameId()%>\"> (GameBean.GameId())}</td>\r\n");
-      out.write("\t\t\t\t\t<td><input type=\"hidden\" name = \"title\" value=\"<GameBean.GameTitle()%>\"> (GameBean.GameTitle())}</td>\r\n");
-      out.write("\t\t\t\t\t<td><input type=\"hidden\" name = \"hardware\" value=\"<GameBean.HardWare()%>\"> (GameBean.HardWare())}</td>\r\n");
-      out.write("\t\t\t\t\t<td align=\"right\"><input type=\"hidden\" name = \"character\" value=\"<GameBean.Character_count()%>\"> (GameBean.Character_count())}</td>\r\n");
-      out.write("\t\t\t\t</tr> -->\r\n");
+      out.write("\t\t\t\t\t<td> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.gameId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+      out.write("</td>\r\n");
+      out.write("\t\t\t\t\t<td> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.gameTitle)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+      out.write("</td>\r\n");
+      out.write("\t\t\t\t\t<td> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.hardWare)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+      out.write("</td>\r\n");
+      out.write("\t\t\t\t\t<td> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.character_Count)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+      out.write("</td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
       out.write("\t\t</table>\r\n");
       out.write("\t</body>\r\n");
       out.write("</html>");

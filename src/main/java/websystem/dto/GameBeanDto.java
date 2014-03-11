@@ -24,10 +24,10 @@ public class GameBeanDto {
 	/**
 	 * キャラクター数
 	 */
-	public String character_count;
+	public String character_Count;
 
 	/**
 	 * 検索件数
 	 */
-	public String search_count;
+	public String search_Count;
 }

@@ -49,7 +49,7 @@ public class IndexAction {
 		gaemtitle = gameSearchconditionBeanForm.gameTitle;
 		hardware = gameSearchconditionBeanForm.hardWare;
 
-		this.gameBeanList = gameSearchService.searchGameList(gaemtitle, hardware);
+		gameBeanList = gameSearchService.searchGameList(gaemtitle, hardware);
 		return "index.jsp";
 	}
 }

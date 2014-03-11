@@ -71,14 +71,14 @@
 		<table class="float-left" >
 			<caption>ゲームマスタ一覧</caption>
 			<tr>
-				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th><th></th><th></th>
+				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th>
 
 		<!-- 検索結果の表示 -->
-					<!-- <td align="right"><input type="hidden" name = "id" value="<GameBean.GameId()%>"> (GameBean.GameId())}</td>
-					<td><input type="hidden" name = "title" value="<GameBean.GameTitle()%>"> (GameBean.GameTitle())}</td>
-					<td><input type="hidden" name = "hardware" value="<GameBean.HardWare()%>"> (GameBean.HardWare())}</td>
-					<td align="right"><input type="hidden" name = "character" value="<GameBean.Character_count()%>"> (GameBean.Character_count())}</td>
-				</tr> -->
+					<td> ${f:h(e.gameId)}</td>
+					<td> ${f:h(e.gameTitle)}</td>
+					<td> ${f:h(e.hardWare)}</td>
+					<td> ${f:h(e.character_Count)}</td>
+				</tr>
 		</table>
 	</body>
 </html>
