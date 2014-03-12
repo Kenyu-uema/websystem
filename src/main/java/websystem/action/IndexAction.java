@@ -29,8 +29,8 @@ import websystem.service.GameSearchService;
 public class IndexAction {
 
 	public List<GameBeanDto> gameBeanList;
-	public String gaemtitle;
-	public String hardware;
+	public String gameTitle;
+	public String hardWare;
 
 	@Execute(validator = false)
 	public String index() {
@@ -46,10 +46,10 @@ public class IndexAction {
 
 	@Execute(input = "index.jsp")
 	public String search() {
-		gaemtitle = gameSearchconditionBeanForm.gameTitle;
-		hardware = gameSearchconditionBeanForm.hardWare;
+		gameTitle = gameSearchconditionBeanForm.gameTitle;
+		hardWare = gameSearchconditionBeanForm.hardWare;
 
-		gameBeanList = gameSearchService.searchGameList(gaemtitle, hardware);
+		gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
 		return "index.jsp";
 	}
 }

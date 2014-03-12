@@ -14,7 +14,7 @@ public class GameSearchService {
 	@Resource
 	protected JdbcManager jdbcManager;
 
-	private static final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/search.sql";
+	private final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/search.sql";
 
 	public List<GameBeanDto> searchGameList(String gameTitle, String hardWare) {
 
