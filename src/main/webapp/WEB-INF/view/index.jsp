@@ -74,11 +74,11 @@
 				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th>
 
 		<!-- 検索結果の表示 -->
-					<td> ${f:h(e.gameId)}</td>
-					<td> ${f:h(e.gameTitle)}</td>
-					<td> ${f:h(e.hardWare)}</td>
-					<td> ${f:h(e.character_Count)}</td>
-				</tr>
+					<td> ${GameBeanDto.gameId}</td>
+					<td> ${GameBeanDto.gameTitle}</td>
+					<td> ${GameBeanDto.hardWare}</td>
+					<td> ${GameBeanDto.character_Count}</td>
+			</tr>
 		</table>
 	</body>
 </html>
