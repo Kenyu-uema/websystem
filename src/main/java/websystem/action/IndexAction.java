@@ -31,7 +31,11 @@ public class IndexAction {
 	public List<GameBeanDto> gameBeanList;
 	public String gameTitle;
 	public String hardWare;
-	public String gameId;
+
+	@Execute(validator = false)
+	public String index() {
+		return "index.jsp";
+	}
 
 	@Resource
 	public GameSearchService gameSearchService;
@@ -41,11 +45,6 @@ public class IndexAction {
 	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
 
 	public GameBeanDto gameBeanDto;
-
-	@Execute(validator = false)
-	public String index() {
-		return "index.jsp";
-	}
 
 	@Execute(input = "index.jsp")
 	public String search() {

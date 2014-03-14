@@ -73,17 +73,15 @@
 			<tr>
 				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th> </th><th> </th>
 			</tr>
-			<c:forEach var="m"  begin="1" end="" items="${gameBeanList}">
-			<s:form method="post" >
+			<c:forEach var="m" items="${gameBeanList}">
 			<tr>
 		<!-- 検索結果の表示 -->
-					<td>${f:h(m.gameId)}</td>
-					<td>${f:h(m.gameTitle)}</td>
-					<td>${f:h(m.hardWare)}</td>
+					<td> ${f:h(m.gameId)}</td>
+					<td> ${f:h(m.gameTitle)}</td>
+					<td> ${f:h(m.hardWare)}</td>
 					<td><input type="submit"  name="update" value="修正"  ></td>
 					<td><input type="submit"  name="del" value="削除" onclick="return confirm('削除しますか?');"/></td>
 			</tr>
-			</s:form>
 			</c:forEach>
 		</table>
 	</body>
