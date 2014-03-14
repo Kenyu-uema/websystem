@@ -38,18 +38,20 @@ public class IndexAction {
 	}
 
 	@Resource
-	protected GameSearchService gameSearchService;
+	public GameSearchService gameSearchService;
 
 	@ActionForm
 	@Resource
 	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
+
+	public GameBeanDto gameBeanDto;
 
 	@Execute(input = "index.jsp")
 	public String search() {
 		gameTitle = gameSearchconditionBeanForm.gameTitle;
 		hardWare = gameSearchconditionBeanForm.hardWare;
 
-		this.gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
+		gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
 		return "index.jsp";
 	}
 }

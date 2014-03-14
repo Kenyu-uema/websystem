@@ -71,14 +71,18 @@
 		<table class="float-left" >
 			<caption>ゲームマスタ一覧</caption>
 			<tr>
-				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th>
-
+				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th> </th><th> </th>
+			</tr>
+			<c:forEach var="m" items="${gameBeanList}">
+			<tr>
 		<!-- 検索結果の表示 -->
-					<td> ${GameBeanDto.gameId}</td>
-					<td> ${GameBeanDto.gameTitle}</td>
-					<td> ${GameBeanDto.hardWare}</td>
-					<td> ${GameBeanDto.character_Count}</td>
-				</tr>
+					<td> ${f:h(m.gameId)}</td>
+					<td> ${f:h(m.gameTitle)}</td>
+					<td> ${f:h(m.hardWare)}</td>
+					<td><input type="submit"  name="update" value="修正"  ></td>
+					<td><input type="submit"  name="del" value="削除" onclick="return confirm('削除しますか?');"/></td>
+			</tr>
+			</c:forEach>
 		</table>
 	</body>
 </html>
