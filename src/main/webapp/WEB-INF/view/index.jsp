@@ -29,12 +29,12 @@
 		<!-- 入力チェック -->
 			<script type="text/javascript">
 				function checkForm(){
-					if(document.kakunin.gameTitle.value == ""){
+					if(document.check.gameTitle.value == ""){
 						alert('ゲームタイトルを入力してください');
 						document.kakunin.gameTitle.focus();
 						return false;
 					}
-					if(document.kakunin.hardware.value == ""){
+					if(document.check.hardware.value == ""){
 						alert('ハードウェアを入力してください');
 						document.kakunin.hardware.focus();
 						return false;
@@ -53,7 +53,7 @@
 			<p>ハードウェア &nbsp; :<html:text name="hardware" size="100"  maxlength="50"  property="hardWare" value=""/>
 
 		<!-- 検索・新規のボタン設定 -->
-			<input type="button"   value="新規" name="new"  onclick ="goInsert();">
+			<input type="submit"   value="新規" name="insert" >
 			<input type="submit"  value="検索"  name="search" onclick="return confirm('検索しますか?');"/></p>
 		</s:form>
 

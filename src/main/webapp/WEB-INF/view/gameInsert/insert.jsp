@@ -62,10 +62,10 @@
 		<!-- 登録内容の入力 -->
 			<table class="float-left" >
 				<tr>
-					<th>ゲームタイトル</th><td><input type="text" name="gameTitle"  size="146"  maxlength="50" ></td>
+					<th>ゲームタイトル</th><td><html:text size="146"  maxlength="50"   property = "gameTitle"  value=""/></td>
 				</tr>
 				<tr>
-					<th>ハードウェア</th><td><input type="text" name="hardware"  size="146"  maxlength="50" ></td>
+					<th>ハードウェア</th><td><html:text size="146"  maxlength="50"   property = "hardWare"  value=""/></td>
 				</tr>
 				<tr>
 					<th>感想</th><td><textarea name="impression"  cols="100"  rows="10" maxlength="1000" ></textarea></td>

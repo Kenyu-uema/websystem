@@ -44,8 +44,6 @@ public class IndexAction {
 	@Resource
 	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
 
-	public GameBeanDto gameBeanDto;
-
 	@Execute(input = "index.jsp")
 	public String search() {
 		gameTitle = gameSearchconditionBeanForm.gameTitle;
@@ -53,5 +51,10 @@ public class IndexAction {
 
 		gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
 		return "index.jsp";
+	}
+
+	@Execute(validator = false, redirect = true)
+	public String insert() {
+		return "http://localhost:8081/WebSystem/gameInsert/";
 	}
 }

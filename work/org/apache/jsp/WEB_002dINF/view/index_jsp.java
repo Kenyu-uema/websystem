@@ -113,12 +113,12 @@ static {
       out.write("\t\t<!-- 入力チェック -->\r\n");
       out.write("\t\t\t<script type=\"text/javascript\">\r\n");
       out.write("\t\t\t\tfunction checkForm(){\r\n");
-      out.write("\t\t\t\t\tif(document.kakunin.gameTitle.value == \"\"){\r\n");
+      out.write("\t\t\t\t\tif(document.check.gameTitle.value == \"\"){\r\n");
       out.write("\t\t\t\t\t\talert('ゲームタイトルを入力してください');\r\n");
       out.write("\t\t\t\t\t\tdocument.kakunin.gameTitle.focus();\r\n");
       out.write("\t\t\t\t\t\treturn false;\r\n");
       out.write("\t\t\t\t\t}\r\n");
-      out.write("\t\t\t\t\tif(document.kakunin.hardware.value == \"\"){\r\n");
+      out.write("\t\t\t\t\tif(document.check.hardware.value == \"\"){\r\n");
       out.write("\t\t\t\t\t\talert('ハードウェアを入力してください');\r\n");
       out.write("\t\t\t\t\t\tdocument.kakunin.hardware.focus();\r\n");
       out.write("\t\t\t\t\t\treturn false;\r\n");
@@ -211,7 +211,7 @@ if(request.getAttribute("error") != null){
         out.write("\r\n");
         out.write("\r\n");
         out.write("\t\t<!-- 検索・新規のボタン設定 -->\r\n");
-        out.write("\t\t\t<input type=\"button\"   value=\"新規\" name=\"new\"  onclick =\"goInsert();\">\r\n");
+        out.write("\t\t\t<input type=\"submit\"   value=\"新規\" name=\"insert\" >\r\n");
         out.write("\t\t\t<input type=\"submit\"  value=\"検索\"  name=\"search\" onclick=\"return confirm('検索しますか?');\"/></p>\r\n");
         out.write("\t\t");
         int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
