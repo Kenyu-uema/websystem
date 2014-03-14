@@ -14,7 +14,7 @@ public class GameSearchService {
 	@Resource
 	protected JdbcManager jdbcManager;
 
-	private final String SQL_FILE = "/search.sql";
+	private final String SQL_FILE = "search.sql";
 
 	public List<GameBeanDto> searchGameList(String gameTitle, String hardWare) {
 
