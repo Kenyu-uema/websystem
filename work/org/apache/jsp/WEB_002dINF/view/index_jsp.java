@@ -7,6 +7,12 @@ import javax.servlet.jsp.*;
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+static private org.apache.jasper.runtime.ProtectedFunctionMapper _jspx_fnmap_0;
+
+static {
+  _jspx_fnmap_0= org.apache.jasper.runtime.ProtectedFunctionMapper.getMapForFunction("f:h", org.seasar.struts.taglib.S2Functions.class, "h", new Class[] {java.lang.Object.class});
+}
+
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
@@ -158,18 +164,18 @@ if(request.getAttribute("error") != null){
       out.write("\r\n");
       out.write("\t\t<!-- 検索結果の表示 -->\r\n");
       out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.gameId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.gameId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
       out.write("</td>\r\n");
       out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.gameTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.gameTitle)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
       out.write("</td>\r\n");
       out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.hardWare}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.hardWare)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
       out.write("</td>\r\n");
       out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.character_Count}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(e.character_Count)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
       out.write("</td>\r\n");
-      out.write("\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
       out.write("\t\t</table>\r\n");
       out.write("\t</body>\r\n");
       out.write("</html>");
