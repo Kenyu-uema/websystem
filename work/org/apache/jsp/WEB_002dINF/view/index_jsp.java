@@ -7,6 +7,12 @@ import javax.servlet.jsp.*;
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+static private org.apache.jasper.runtime.ProtectedFunctionMapper _jspx_fnmap_0;
+
+static {
+  _jspx_fnmap_0= org.apache.jasper.runtime.ProtectedFunctionMapper.getMapForFunction("f:h", org.seasar.struts.taglib.S2Functions.class, "h", new Class[] {java.lang.Object.class});
+}
+
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
@@ -19,6 +25,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems_005fend_005fbegin;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -31,6 +39,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems_005fend_005fbegin = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
@@ -39,6 +49,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.release();
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.release();
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.release();
+    _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems_005fend_005fbegin.release();
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -154,22 +166,12 @@ if(request.getAttribute("error") != null){
       out.write("\t\t<table class=\"float-left\" >\r\n");
       out.write("\t\t\t<caption>ゲームマスタ一覧</caption>\r\n");
       out.write("\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th>キャラクター数</th>\r\n");
+      out.write("\t\t\t\t<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th> </th><th> </th>\r\n");
+      out.write("\t\t\t</tr>\r\n");
+      out.write("\t\t\t");
+      if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
+        return;
       out.write("\r\n");
-      out.write("\t\t<!-- 検索結果の表示 -->\r\n");
-      out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.gameId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</td>\r\n");
-      out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.gameTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</td>\r\n");
-      out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.hardWare}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</td>\r\n");
-      out.write("\t\t\t\t\t<td> ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${GameBeanDto.character_Count}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</td>\r\n");
-      out.write("\t\t\t\t</tr>\r\n");
       out.write("\t\t</table>\r\n");
       out.write("\t</body>\r\n");
       out.write("</html>");
@@ -277,6 +279,94 @@ if(request.getAttribute("error") != null){
       return true;
     }
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.reuse(_jspx_th_html_005ftext_005f1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fforEach_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems_005fend_005fbegin.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fforEach_005f0.setParent(null);
+    // /WEB-INF/view/index.jsp(76,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setVar("m");
+    // /WEB-INF/view/index.jsp(76,3) name = begin type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setBegin(1);
+    // /WEB-INF/view/index.jsp(76,3) name = end type = int reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setEnd(0);
+    // /WEB-INF/view/index.jsp(76,3) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gameBeanList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_005fforEach_005f0 = _jspx_th_c_005fforEach_005f0.doStartTag();
+      if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("\t\t\t");
+          if (_jspx_meth_s_005fform_005f1(_jspx_th_c_005fforEach_005f0, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
+            return true;
+          out.write("\r\n");
+          out.write("\t\t\t");
+          int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fforEach_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_005fforEach_005f0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_005fforEach_005f0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_005fforEach_005f0.doFinally();
+      _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems_005fend_005fbegin.reuse(_jspx_th_c_005fforEach_005f0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fform_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_005fforEach_005f0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_005fforEach_005f0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:form
+    org.seasar.struts.taglib.S2FormTag _jspx_th_s_005fform_005f1 = (org.seasar.struts.taglib.S2FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod.get(org.seasar.struts.taglib.S2FormTag.class);
+    _jspx_th_s_005fform_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fform_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
+    // /WEB-INF/view/index.jsp(77,3) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f1.setMethod("post");
+    int _jspx_eval_s_005fform_005f1 = _jspx_th_s_005fform_005f1.doStartTag();
+    if (_jspx_eval_s_005fform_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("\t\t\t<tr>\r\n");
+        out.write("\t\t<!-- 検索結果の表示 -->\r\n");
+        out.write("\t\t\t\t\t<td>");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(m.gameId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+        out.write("</td>\r\n");
+        out.write("\t\t\t\t\t<td>");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(m.gameTitle)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+        out.write("</td>\r\n");
+        out.write("\t\t\t\t\t<td>");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(m.hardWare)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
+        out.write("</td>\r\n");
+        out.write("\t\t\t\t\t<td><input type=\"submit\"  name=\"update\" value=\"修正\"  ></td>\r\n");
+        out.write("\t\t\t\t\t<td><input type=\"submit\"  name=\"del\" value=\"削除\" onclick=\"return confirm('削除しますか?');\"/></td>\r\n");
+        out.write("\t\t\t</tr>\r\n");
+        out.write("\t\t\t");
+        int evalDoAfterBody = _jspx_th_s_005fform_005f1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_s_005fform_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod.reuse(_jspx_th_s_005fform_005f1);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod.reuse(_jspx_th_s_005fform_005f1);
     return false;
   }
 }

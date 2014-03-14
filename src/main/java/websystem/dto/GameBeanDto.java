@@ -1,6 +1,12 @@
 package websystem.dto;
 
 public class GameBeanDto {
+
+	/**
+	 * 検索件数
+	 */
+	public String search_count;
+
 	/**
 	 * ゲームID 
 	 */
@@ -24,10 +30,6 @@ public class GameBeanDto {
 	/**
 	 * キャラクター数
 	 */
-	public String character_Count;
+	public String character_count;
 
-	/**
-	 * 検索件数
-	 */
-	public String search_Count;
 }

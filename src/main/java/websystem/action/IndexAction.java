@@ -31,25 +31,28 @@ public class IndexAction {
 	public List<GameBeanDto> gameBeanList;
 	public String gameTitle;
 	public String hardWare;
+	public String gameId;
+
+	@Resource
+	public GameSearchService gameSearchService;
+
+	@ActionForm
+	@Resource
+	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
+
+	public GameBeanDto gameBeanDto;
 
 	@Execute(validator = false)
 	public String index() {
 		return "index.jsp";
 	}
 
-	@Resource
-	protected GameSearchService gameSearchService;
-
-	@ActionForm
-	@Resource
-	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
-
 	@Execute(input = "index.jsp")
 	public String search() {
 		gameTitle = gameSearchconditionBeanForm.gameTitle;
 		hardWare = gameSearchconditionBeanForm.hardWare;
 
-		this.gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
+		gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
 		return "index.jsp";
 	}
 }
