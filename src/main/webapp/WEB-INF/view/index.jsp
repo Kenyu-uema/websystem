@@ -73,15 +73,18 @@
 			<tr>
 				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th> </th><th> </th>
 			</tr>
+
 			<c:forEach var="m" items="${gameBeanList}">
-			<tr>
+				<s:form method="post"   onsubmit = "return checkForm()">
+					<tr>
 		<!-- 検索結果の表示 -->
-					<td> ${f:h(m.gameId)}</td>
-					<td> ${f:h(m.gameTitle)}</td>
-					<td> ${f:h(m.hardWare)}</td>
-					<td><input type="submit"  name="update" value="修正"  ></td>
-					<td><input type="submit"  name="delete" value="削除" onclick="return confirm('削除しますか?');"/></td>
-			</tr>
+						<td> <html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
+						<td> <html:hidden property="gameTitle" value="${m.gameTitle}"/> ${f:h(m.gameTitle)}</td>
+						<td> <html:hidden property="hardWare" value="${m.hardWare}"/> ${f:h(m.hardWare)}</td>
+						<td><input type="submit" value="修正"   name="update"  ></td>
+						<td><input type="submit"  value="削除" name="delete"  onclick="return confirm('${m.gameTitle}削除しますか?');"/></td>
+					</tr>
+				</s:form>
 			</c:forEach>
 		</table>
 	</body>

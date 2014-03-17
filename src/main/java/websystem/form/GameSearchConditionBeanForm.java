@@ -15,4 +15,9 @@ public class GameSearchConditionBeanForm {
 	@Required
 	public String hardWare;
 
+	/**
+	 * ゲームID
+	 */
+	@Required
+	public String gameId;
 }

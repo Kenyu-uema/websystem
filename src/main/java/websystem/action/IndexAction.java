@@ -24,6 +24,7 @@ import org.seasar.struts.annotation.Execute;
 
 import websystem.dto.GameBeanDto;
 import websystem.form.GameSearchConditionBeanForm;
+import websystem.service.GameDeleteService;
 import websystem.service.GameSearchService;
 
 public class IndexAction {
@@ -31,6 +32,7 @@ public class IndexAction {
 	public List<GameBeanDto> gameBeanList;
 	public String gameTitle;
 	public String hardWare;
+	public String gameId;
 
 	@Execute(validator = false)
 	public String index() {
@@ -44,7 +46,7 @@ public class IndexAction {
 	@Resource
 	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
 
-	@Execute(input = "index.jsp")
+	@Execute(validator = false, input = "index.jsp")
 	public String search() {
 		gameTitle = gameSearchconditionBeanForm.gameTitle;
 		hardWare = gameSearchconditionBeanForm.hardWare;
@@ -63,8 +65,15 @@ public class IndexAction {
 		return "http://localhost:8081/WebSystem/gameUpdate/";
 	}
 
-	@Execute(validator = false, redirect = true)
+	@Resource
+	public GameDeleteService gameDeleteService;
+
+	@Execute(input = "index.jsp")
 	public String delete() {
-		return "http://localhost:8081/WebSystem/gameUpdate/";
+		gameId = gameSearchconditionBeanForm.gameId;
+
+		gameDeleteService.deleteGame(gameId);
+
+		return "index.jsp";
 	}
 }
