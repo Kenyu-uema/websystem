@@ -6,6 +6,7 @@ import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
 import websystem.form.GameInsertConditionBeanForm;
+import websystem.service.GameInsertService;
 
 public class GameInsertAction {
 
@@ -23,15 +24,20 @@ public class GameInsertAction {
 		return "http://localhost:8081/WebSystem/";
 	}
 
+	@Resource
+	public GameInsertService gameInsertService;
+
 	@ActionForm
 	@Resource
 	protected GameInsertConditionBeanForm gameInsertConditionBeanForm;
 
-	@Execute(input = "insert.jsp")
+	@Execute(validator = false, input = "insert.jsp")
 	public String insert() {
 		gameTitle = gameInsertConditionBeanForm.gameTitle;
 		hardWare = gameInsertConditionBeanForm.hardWare;
 		impression = gameInsertConditionBeanForm.impression;
+
+		gameInsertService.insertGame(gameTitle, hardWare, impression);
 
 		return "insert.jsp";
 	}

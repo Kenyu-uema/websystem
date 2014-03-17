@@ -80,7 +80,7 @@
 					<td> ${f:h(m.gameTitle)}</td>
 					<td> ${f:h(m.hardWare)}</td>
 					<td><input type="submit"  name="update" value="修正"  ></td>
-					<td><input type="submit"  name="del" value="削除" onclick="return confirm('削除しますか?');"/></td>
+					<td><input type="submit"  name="delete" value="削除" onclick="return confirm('削除しますか?');"/></td>
 			</tr>
 			</c:forEach>
 		</table>

@@ -57,4 +57,14 @@ public class IndexAction {
 	public String insert() {
 		return "http://localhost:8081/WebSystem/gameInsert/";
 	}
+
+	@Execute(validator = false, redirect = true)
+	public String update() {
+		return "http://localhost:8081/WebSystem/gameUpdate/";
+	}
+
+	@Execute(validator = false, redirect = true)
+	public String delete() {
+		return "http://localhost:8081/WebSystem/gameUpdate/";
+	}
 }
