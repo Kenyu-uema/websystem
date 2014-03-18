@@ -57,18 +57,19 @@ public class IndexAction {
 
 	@Execute(validator = false, redirect = true)
 	public String insert() {
-		return "http://localhost:8081/WebSystem/gameInsert/";
+		return "gameInsert";
 	}
 
 	@Execute(validator = false, redirect = true)
 	public String update() {
-		return "http://localhost:8081/WebSystem/gameUpdate/";
+		gameId = gameSearchconditionBeanForm.gameId;
+		return "gameUpdate?gameID=" + gameId;
 	}
 
 	@Resource
 	public GameDeleteService gameDeleteService;
 
-	@Execute(input = "index.jsp")
+	@Execute(validator = false, input = "index.jsp")
 	public String delete() {
 		gameId = gameSearchconditionBeanForm.gameId;
 

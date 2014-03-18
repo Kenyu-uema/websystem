@@ -21,7 +21,7 @@ public class GameInsertAction {
 
 	@Execute(validator = false, redirect = true)
 	public String result() {
-		return "http://localhost:8081/WebSystem/";
+		return "/index";
 	}
 
 	@Resource
