@@ -1,5 +1,7 @@
 <html>
 <head>
+	<!-- 入力チェック -->
+	<html:javascript formName="indexActionForm_search"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>ゲーム管理システム</title>
 
@@ -27,45 +29,29 @@
 		</style>
 
 		<!-- 入力チェック -->
-			<script type="text/javascript">
-				function checkForm(){
-					if(document.check.gameTitle.value == ""){
-						alert('ゲームタイトルを入力してください');
-						document.kakunin.gameTitle.focus();
-						return false;
-					}
-					if(document.check.hardware.value == ""){
-						alert('ハードウェアを入力してください');
-						document.kakunin.hardware.focus();
-						return false;
-					}
-				return true;
-				}
-		</script>
+
 	</head>
 	<body>
-
-
 		<!-- 検索条件の入力 -->
 		<h1 id = "title">ゲーム管理システム</h1>
+			<html:errors/>
 		<s:form method="post"   onsubmit = "return checkForm()">
 			<p>ゲームタイトル:<html:text size="100"  maxlength="50"  property="gameTitle" value=""/></p>
 			<p>ハードウェア &nbsp; :<html:text name="hardware" size="100"  maxlength="50"  property="hardWare" value=""/>
 
 		<!-- 検索・新規のボタン設定 -->
-			<input type="submit"   value="新規" name="insert" >
-			<input type="submit"  value="検索"  name="search" onclick="return confirm('検索しますか?');"/></p>
+			<s:submit property = "insert" >新規</s:submit>
+			<s:submit property = "search"  clientValidate = "true" >検索</s:submit></p>
 		</s:form>
 
 
 		<!-- エラーの表示 -->
-		<p><%if(request.getAttribute("message") != null){%>
-				<%=request.getAttribute("message")%>
-			<%}%></p>
-
-		<p><%if(request.getAttribute("error") != null){ %>
-			<%=request.getAttribute("error")%>
-			<%} %></p>
+		<p><c:if test = "${message != null}" >
+				${message}
+			</c:if></p>
+		<p><c:if test = "${error != null}">
+				${error}
+			</c:if></p>
 		<hr>
 
 		<table class="float-left" >
@@ -74,12 +60,15 @@
 				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th> &nbsp;</th><th> &nbsp;</th>
 			</tr>
 
+			<c:if test="${searchCount != 0}">
+				<p>${countmessage}</p>
+			</c:if>
 			<c:forEach var="m" items="${gameBeanList}">
 				<s:form method="post"   onsubmit = "return checkForm()">
 					<tr>
 		<!-- 検索結果の表示 -->
 						<td> <html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
-						<td> ${f:h(m.gameTitle)}</td>
+						<td> <html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
 						<td> ${f:h(m.hardWare)}</td>
 						<td><input type="submit" value="修正"   name="update"  ></td>
 						<td><input type="submit"  value="削除" name="delete"  onclick="return confirm('${m.gameTitle}削除しますか?');"/></td>

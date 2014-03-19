@@ -6,24 +6,22 @@ public class GameUpdateConditionBeanForm {
 	/**
 	 * ゲームID
 	 */
-	@Required
 	public String gameId;
 
 	/**
 	 * ゲームタイトル
 	 */
-	@Required
+	@Required(target = "update")
 	public String gameTitle;
 
 	/**
 	 * ハードウェア
 	 */
-	@Required
+	@Required(target = "update")
 	public String hardWare;
 
 	/**
 	 * 感想
 	 */
-	@Required
 	public String impression;
 }

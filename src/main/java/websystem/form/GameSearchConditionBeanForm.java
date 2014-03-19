@@ -6,18 +6,17 @@ public class GameSearchConditionBeanForm {
 	/**
 	 * ゲームタイトル
 	 */
-	@Required
+	@Required(target = "search")
 	public String gameTitle;
 
 	/**
 	 * ハードウェア
 	 */
-	@Required
+	@Required(target = "search")
 	public String hardWare;
 
 	/**
 	 * ゲームID
 	 */
-	@Required
 	public String gameId;
 }

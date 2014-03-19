@@ -7,19 +7,19 @@ public class GameInsertConditionBeanForm {
 	/**
 	 * ゲームタイトル
 	 */
-	@Required
+	@Required(target = "insert")
 	public String gameTitle;
 
 	/**
 	 * ハードウェア
 	 */
-	@Required
+	@Required(target = "insert")
 	public String hardWare;
 
 	/**
 	 * 感想
 	 */
-	@Required
+
 	public String impression;
 
 }

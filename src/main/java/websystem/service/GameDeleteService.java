@@ -12,12 +12,13 @@ public class GameDeleteService {
 
 	private final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/delete.sql";
 
+	/*削除のSQL実行*/
 	public void deleteGame(String gameId) {
 
 		GameBeanParam param = new GameBeanParam();
 		param.gameId = gameId;
 
-		int count = jdbcManager.updateBySqlFile(SQL_FILE, param)
+		jdbcManager.updateBySqlFile(SQL_FILE, param)
 				.execute();
 	}
 }

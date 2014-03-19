@@ -15,6 +15,7 @@ public class GameUpdateSearchService {
 
 	private final String SQL_FILE = "META-INF/sql/websystem/entity/Employee/updatesearch.sql";
 
+	/*更新データ検索のSQL実行*/
 	public List<GameBeanDto> searchGame(String gameId) {
 
 		GameBeanParam param = new GameBeanParam();

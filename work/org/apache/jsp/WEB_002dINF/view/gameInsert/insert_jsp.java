@@ -16,8 +16,12 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_dependants.add("/WEB-INF/view/common/common.jsp");
   }
 
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005fjavascript_0026_005fformName_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005ferrors_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fif_0026_005ftest;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005flink_0026_005fhref;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
@@ -28,16 +32,24 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
+    _005fjspx_005ftagPool_005fhtml_005fjavascript_0026_005fformName_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fhtml_005ferrors_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005flink_0026_005fhref = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
+    _005fjspx_005ftagPool_005fhtml_005fjavascript_0026_005fformName_005fnobody.release();
+    _005fjspx_005ftagPool_005fhtml_005ferrors_005fnobody.release();
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.release();
     _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.release();
     _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.release();
+    _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate.release();
     _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.release();
   }
 
@@ -76,6 +88,11 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("\t<head>\r\n");
+      out.write("\t<!-- 入力チェック -->\r\n");
+      out.write("\t");
+      if (_jspx_meth_html_005fjavascript_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("\t\t<title>ゲーム管理システム</title>\r\n");
       out.write("\r\n");
@@ -110,31 +127,29 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</style>\r\n");
       out.write("\r\n");
       out.write("\t\t<!-- 入力チェック -->\r\n");
-      out.write("\t\t<script type=\"text/javascript\">\r\n");
-      out.write("\t\t\t\tfunction checkForm(){\r\n");
-      out.write("\t\t\t\tif(document.insert.gameTitle.value == \"\"){\r\n");
-      out.write("\t\t\t\t\talert('ゲームタイトルを入力してください');\r\n");
-      out.write("\t\t\t\t\tdocument.insert.gameTitle.focus();\r\n");
-      out.write("\t\t\t\t\treturn false;\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\t\t\t\tif(document.insert.hardware.value == \"\"){\r\n");
-      out.write("\t\t\t\t\talert('ハードウェアを入力してください');\r\n");
-      out.write("\t\t\t\t\tdocument.insert.hardware.focus();\r\n");
-      out.write("\t\t\t\t\treturn false;\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\t\t\t\t\treturn true;\r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\t\t</script>\r\n");
+      out.write("\r\n");
       out.write("\t</head>\r\n");
       out.write("\t<body>\r\n");
       out.write("\t\t<h1 id = \"title\">ゲーム管理システム&gt;登録画面</h1>\r\n");
+      out.write("\t\t\t");
+      if (_jspx_meth_html_005ferrors_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\t\t<!-- メッセージの表示 -->\r\n");
+      out.write("\t\t\t<p>");
+      if (_jspx_meth_c_005fif_005f0(_jspx_page_context))
+        return;
+      out.write("</p>\r\n");
+      out.write("\t\t\t<p>");
+      if (_jspx_meth_c_005fif_005f1(_jspx_page_context))
+        return;
+      out.write("</p>\r\n");
       out.write("\r\n");
       out.write("\t\t<!-- 登録用のボタン設定 -->\r\n");
-      out.write("\t\t\t");
+      out.write("\t\t");
       if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t</table>\r\n");
       out.write("\t</body>\r\n");
       out.write("\r\n");
       out.write("</html>");
@@ -151,6 +166,104 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     }
   }
 
+  private boolean _jspx_meth_html_005fjavascript_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  html:javascript
+    org.apache.struts.taglib.html.JavascriptValidatorTag _jspx_th_html_005fjavascript_005f0 = (org.apache.struts.taglib.html.JavascriptValidatorTag) _005fjspx_005ftagPool_005fhtml_005fjavascript_0026_005fformName_005fnobody.get(org.apache.struts.taglib.html.JavascriptValidatorTag.class);
+    _jspx_th_html_005fjavascript_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_html_005fjavascript_005f0.setParent(null);
+    // /WEB-INF/view/gameInsert/insert.jsp(5,1) name = formName type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005fjavascript_005f0.setFormName("gameInsertActionForm_insert");
+    int _jspx_eval_html_005fjavascript_005f0 = _jspx_th_html_005fjavascript_005f0.doStartTag();
+    if (_jspx_th_html_005fjavascript_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fhtml_005fjavascript_0026_005fformName_005fnobody.reuse(_jspx_th_html_005fjavascript_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fhtml_005fjavascript_0026_005fformName_005fnobody.reuse(_jspx_th_html_005fjavascript_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_html_005ferrors_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  html:errors
+    org.apache.struts.taglib.html.ErrorsTag _jspx_th_html_005ferrors_005f0 = (org.apache.struts.taglib.html.ErrorsTag) _005fjspx_005ftagPool_005fhtml_005ferrors_005fnobody.get(org.apache.struts.taglib.html.ErrorsTag.class);
+    _jspx_th_html_005ferrors_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_html_005ferrors_005f0.setParent(null);
+    int _jspx_eval_html_005ferrors_005f0 = _jspx_th_html_005ferrors_005f0.doStartTag();
+    if (_jspx_th_html_005ferrors_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fhtml_005ferrors_005fnobody.reuse(_jspx_th_html_005ferrors_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fhtml_005ferrors_005fnobody.reuse(_jspx_th_html_005ferrors_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fif_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fif_005f0.setParent(null);
+    // /WEB-INF/view/gameInsert/insert.jsp(46,6) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${message != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
+    if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("\t\t\t\t");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${message}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write("\r\n");
+        out.write("\t\t\t");
+        int evalDoAfterBody = _jspx_th_c_005fif_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_005fif_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fif_005f1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_005fif_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fif_005f1.setParent(null);
+    // /WEB-INF/view/gameInsert/insert.jsp(49,6) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fif_005f1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${error != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
+    int _jspx_eval_c_005fif_005f1 = _jspx_th_c_005fif_005f1.doStartTag();
+    if (_jspx_eval_c_005fif_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("\t\t\t\t");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${error}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write("\r\n");
+        out.write("\t\t\t");
+        int evalDoAfterBody = _jspx_th_c_005fif_005f1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_005fif_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f1);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f1);
+    return false;
+  }
+
   private boolean _jspx_meth_s_005fform_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -159,20 +272,24 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.seasar.struts.taglib.S2FormTag _jspx_th_s_005fform_005f0 = (org.seasar.struts.taglib.S2FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fonsubmit_005fmethod.get(org.seasar.struts.taglib.S2FormTag.class);
     _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f0.setParent(null);
-    // /WEB-INF/view/gameInsert/insert.jsp(58,3) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(54,2) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setMethod("post");
-    // /WEB-INF/view/gameInsert/insert.jsp(58,3) name = onsubmit type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(54,2) name = onsubmit type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setOnsubmit("return checkForm()");
     int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("\t\t\t<div class=\"back\"><a>");
+        out.write("\t\t\t\t<div class=\"back\"><a>");
         if (_jspx_meth_s_005flink_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
           return true;
         out.write("</a></div>\r\n");
-        out.write("\t\t\t<div class=\"insert\"><input type=\"submit\"   value=\"登録\" name=\"insert\" onclick=\"return confirm('登録しますか?');\"/></div>\r\n");
-        out.write("\t\t\t<br>\r\n");
+        out.write("\t\t\t\t<div class=\"insert\">");
+        if (_jspx_meth_s_005fsubmit_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write("</div>\r\n");
+        out.write("\t\t\t\t<br>\r\n");
+        out.write("\r\n");
         out.write("\t\t<!-- 登録内容の入力 -->\r\n");
         out.write("\t\t\t<table class=\"float-left\" >\r\n");
         out.write("\t\t\t\t<tr>\r\n");
@@ -190,7 +307,8 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\t\t\t\t<tr>\r\n");
         out.write("\t\t\t\t\t<th>感想</th><td><textarea name=\"impression\"  cols=\"100\"  rows=\"10\" maxlength=\"1000\" ></textarea></td>\r\n");
         out.write("\t\t\t\t</tr>\r\n");
-        out.write("\t\t\t");
+        out.write("\t\t\t</table>\r\n");
+        out.write("\t\t");
         int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -212,7 +330,7 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.seasar.struts.taglib.S2LinkTag _jspx_th_s_005flink_005f0 = (org.seasar.struts.taglib.S2LinkTag) _005fjspx_005ftagPool_005fs_005flink_0026_005fhref.get(org.seasar.struts.taglib.S2LinkTag.class);
     _jspx_th_s_005flink_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005flink_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/gameInsert/insert.jsp(59,24) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(55,25) name = href type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005flink_005f0.setHref("result");
     int _jspx_eval_s_005flink_005f0 = _jspx_th_s_005flink_005f0.doStartTag();
     if (_jspx_eval_s_005flink_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -239,6 +357,44 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_s_005fsubmit_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:submit
+    org.seasar.struts.taglib.S2SubmitTag _jspx_th_s_005fsubmit_005f0 = (org.seasar.struts.taglib.S2SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate.get(org.seasar.struts.taglib.S2SubmitTag.class);
+    _jspx_th_s_005fsubmit_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fsubmit_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
+    // /WEB-INF/view/gameInsert/insert.jsp(56,24) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fsubmit_005f0.setProperty("insert");
+    // /WEB-INF/view/gameInsert/insert.jsp(56,24) name = clientValidate type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fsubmit_005f0.setClientValidate(true);
+    int _jspx_eval_s_005fsubmit_005f0 = _jspx_th_s_005fsubmit_005f0.doStartTag();
+    if (_jspx_eval_s_005fsubmit_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_s_005fsubmit_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.pushBody();
+        _jspx_th_s_005fsubmit_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_s_005fsubmit_005f0.doInitBody();
+      }
+      do {
+        out.write('登');
+        out.write('録');
+        int evalDoAfterBody = _jspx_th_s_005fsubmit_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+      if (_jspx_eval_s_005fsubmit_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.popBody();
+      }
+    }
+    if (_jspx_th_s_005fsubmit_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate.reuse(_jspx_th_s_005fsubmit_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate.reuse(_jspx_th_s_005fsubmit_005f0);
+    return false;
+  }
+
   private boolean _jspx_meth_html_005ftext_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -247,13 +403,13 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f0 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f0.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/gameInsert/insert.jsp(65,25) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(62,25) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setSize("146");
-    // /WEB-INF/view/gameInsert/insert.jsp(65,25) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(62,25) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setMaxlength("50");
-    // /WEB-INF/view/gameInsert/insert.jsp(65,25) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(62,25) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setProperty("gameTitle");
-    // /WEB-INF/view/gameInsert/insert.jsp(65,25) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(62,25) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setValue("");
     int _jspx_eval_html_005ftext_005f0 = _jspx_th_html_005ftext_005f0.doStartTag();
     if (_jspx_th_html_005ftext_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -272,13 +428,13 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f1 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f1.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/gameInsert/insert.jsp(68,24) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(65,24) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setSize("146");
-    // /WEB-INF/view/gameInsert/insert.jsp(68,24) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(65,24) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setMaxlength("50");
-    // /WEB-INF/view/gameInsert/insert.jsp(68,24) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(65,24) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setProperty("hardWare");
-    // /WEB-INF/view/gameInsert/insert.jsp(68,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameInsert/insert.jsp(65,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setValue("");
     int _jspx_eval_html_005ftext_005f1 = _jspx_th_html_005ftext_005f1.doStartTag();
     if (_jspx_th_html_005ftext_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

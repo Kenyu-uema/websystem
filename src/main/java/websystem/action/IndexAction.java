@@ -25,55 +25,91 @@ import org.seasar.struts.annotation.Execute;
 import websystem.dto.GameBeanDto;
 import websystem.form.GameSearchConditionBeanForm;
 import websystem.service.GameDeleteService;
+import websystem.service.GameSearchCountService;
 import websystem.service.GameSearchService;
+import websystem.service.GameUpdateSearchService;
 
 public class IndexAction {
-
-	public List<GameBeanDto> gameBeanList;
 	public String gameTitle;
 	public String hardWare;
 	public String gameId;
+	public String message;
+	public String countmessage;
+	int count = 0;
+	long searchCount = 0;
 
-	@Execute(validator = false)
-	public String index() {
-		return "index.jsp";
-	}
-
-	@Resource
-	public GameSearchService gameSearchService;
+	public List<GameBeanDto> gameBeanList;
 
 	@ActionForm
 	@Resource
 	protected GameSearchConditionBeanForm gameSearchconditionBeanForm;
 
-	@Execute(validator = false, input = "index.jsp")
+	@Resource
+	public GameSearchService gameSearchService;
+
+	@Resource
+	public GameDeleteService gameDeleteService;
+
+	@Resource
+	public GameUpdateSearchService gameUpdateSearchService;
+
+	@Resource
+	public GameSearchCountService gameSearchCountService;
+
+	/*初期表示*/
+	@Execute(validator = false)
+	public String index() {
+		return "index.jsp";
+	}
+
+	/*検索処理*/
+	@Execute(input = "index.jsp")
 	public String search() {
 		gameTitle = gameSearchconditionBeanForm.gameTitle;
 		hardWare = gameSearchconditionBeanForm.hardWare;
 
-		gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
+		String error = "";
+		try {
+			gameBeanList = gameSearchService.searchGameList(gameTitle, hardWare);
+		} catch (Exception e) {
+			error = "SQLが間違っているか、DBに接続できません。" + e.getMessage();
+			e.printStackTrace();
+		}
+
+		count++;
+		message = count + "回目のこんにちは";
+
+		searchCount = gameSearchCountService.searchGameCount(gameTitle, hardWare);
+
+		countmessage = "検索件数:" + searchCount + "件";
+
 		return "index.jsp";
 	}
 
+	/*登録画面へ*/
 	@Execute(validator = false, redirect = true)
 	public String insert() {
 		return "gameInsert";
 	}
 
+	/*更新画面へ*/
 	@Execute(validator = false, redirect = true)
 	public String update() {
 		gameId = gameSearchconditionBeanForm.gameId;
 		return "gameUpdate?gameID=" + gameId;
 	}
 
-	@Resource
-	public GameDeleteService gameDeleteService;
-
+	/*削除機能*/
 	@Execute(validator = false, input = "index.jsp")
 	public String delete() {
 		gameId = gameSearchconditionBeanForm.gameId;
+		gameTitle = gameSearchconditionBeanForm.gameTitle;
 
 		gameDeleteService.deleteGame(gameId);
+		String error = "";
+		if (error == "") {
+			message = gameTitle + "は削除されました。";
+		}
 
 		return "index.jsp";
 	}

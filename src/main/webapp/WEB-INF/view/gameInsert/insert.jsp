@@ -1,6 +1,8 @@
 <%@page pageEncoding="UTF-8"%>
 <html>
 	<head>
+	<!-- 入力チェック -->
+	<html:javascript formName="gameInsertActionForm_insert"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>ゲーム管理システム</title>
 
@@ -35,30 +37,25 @@
 		</style>
 
 		<!-- 入力チェック -->
-		<script type="text/javascript">
-				function checkForm(){
-				if(document.insert.gameTitle.value == ""){
-					alert('ゲームタイトルを入力してください');
-					document.insert.gameTitle.focus();
-					return false;
-				}
-				if(document.insert.hardware.value == ""){
-					alert('ハードウェアを入力してください');
-					document.insert.hardware.focus();
-					return false;
-				}
-					return true;
-				}
-		</script>
+
 	</head>
 	<body>
 		<h1 id = "title">ゲーム管理システム&gt;登録画面</h1>
+			<html:errors/>
+		<!-- メッセージの表示 -->
+			<p><c:if test = "${message != null}" >
+				${message}
+			</c:if></p>
+			<p><c:if test = "${error != null}">
+				${error}
+			</c:if></p>
 
 		<!-- 登録用のボタン設定 -->
-			<s:form  method="post"  onsubmit = "return checkForm()">
-			<div class="back"><a><s:link href="result">前の画面に戻ります </s:link></a></div>
-			<div class="insert"><input type="submit"   value="登録" name="insert" onclick="return confirm('登録しますか?');"/></div>
-			<br>
+		<s:form  method="post"  onsubmit = "return checkForm()">
+				<div class="back"><a><s:link href="result">前の画面に戻ります </s:link></a></div>
+				<div class="insert"><s:submit property ="insert"  clientValidate = "true" >登録</s:submit></div>
+				<br>
+
 		<!-- 登録内容の入力 -->
 			<table class="float-left" >
 				<tr>
@@ -70,8 +67,8 @@
 				<tr>
 					<th>感想</th><td><textarea name="impression"  cols="100"  rows="10" maxlength="1000" ></textarea></td>
 				</tr>
-			</s:form>
 			</table>
+		</s:form>
 	</body>
 
 </html>
