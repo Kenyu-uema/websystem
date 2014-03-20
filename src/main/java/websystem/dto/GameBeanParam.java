@@ -9,4 +9,5 @@ public class GameBeanParam {
 	public String impression;
 
 	public String gameId;
+
 }

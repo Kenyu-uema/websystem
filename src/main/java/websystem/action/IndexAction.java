@@ -70,7 +70,7 @@ public class IndexAction {
 
 	/*検索処理*/
 	@Execute(input = "index.jsp")
-	public String search() {
+	public String search() throws Exception {
 		gameTitle = gameSearchconditionBeanForm.gameTitle;
 		hardWare = gameSearchconditionBeanForm.hardWare;
 
@@ -82,8 +82,8 @@ public class IndexAction {
 			e.printStackTrace();
 		}
 
-		count++;
-		message = count + "回目のこんにちは";
+		gameSearchconditionBeanForm.count++;
+		message = gameSearchconditionBeanForm.count + "回目のこんにちは";
 
 		searchCount = gameSearchCountService.searchGameCount(gameTitle, hardWare);
 
