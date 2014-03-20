@@ -39,7 +39,7 @@
 
 
 		</head>
-		<body>
+		<body bgcolor="#ffffff">
 			<h1 id = "title">ゲーム管理システム&gt;修正画面</h1>
 				<html:errors/>
 			<p><c:if test = "${message != null}" >
@@ -58,6 +58,9 @@
 			<!-- 修正内容の入力 -->
 				<table class="float-left" >
 					<html:hidden property="gameId" value="${gameBeanList[0].gameId}"/>
+					<tr>
+						<th>ゲームID</th><td> <html:hidden property="gameId" value="${gameBeanList[0].gameId}"/> ${gameBeanList[0].gameId}</td>
+					</tr>
 					<tr>
 						<th>ゲームタイトル</th><td><html:text size="146"  maxlength="50"   property = "gameTitle"  value="${gameBeanList[0].gameTitle}"/></td>
 					</tr>

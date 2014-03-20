@@ -132,7 +132,7 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\t\t</head>\r\n");
-      out.write("\t\t<body>\r\n");
+      out.write("\t\t<body bgcolor=\"#ffffff\">\r\n");
       out.write("\t\t\t<h1 id = \"title\">ゲーム管理システム&gt;修正画面</h1>\r\n");
       out.write("\t\t\t\t");
       if (_jspx_meth_html_005ferrors_005f0(_jspx_page_context))
@@ -299,6 +299,14 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
           return true;
         out.write("\r\n");
         out.write("\t\t\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t\t\t<th>ゲームID</th><td> ");
+        if (_jspx_meth_html_005fhidden_005f1(_jspx_th_s_005fform_005f0, _jspx_page_context))
+          return true;
+        out.write(' ');
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gameBeanList[0].gameId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write("</td>\r\n");
+        out.write("\t\t\t\t\t</tr>\r\n");
+        out.write("\t\t\t\t\t<tr>\r\n");
         out.write("\t\t\t\t\t\t<th>ゲームタイトル</th><td>");
         if (_jspx_meth_html_005ftext_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
           return true;
@@ -424,6 +432,27 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_html_005fhidden_005f1(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  html:hidden
+    org.apache.struts.taglib.html.HiddenTag _jspx_th_html_005fhidden_005f1 = (org.apache.struts.taglib.html.HiddenTag) _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fvalue_005fproperty_005fnobody.get(org.apache.struts.taglib.html.HiddenTag.class);
+    _jspx_th_html_005fhidden_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_html_005fhidden_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
+    // /WEB-INF/view/gameUpdate/update.jsp(62,25) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005fhidden_005f1.setProperty("gameId");
+    // /WEB-INF/view/gameUpdate/update.jsp(62,25) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_html_005fhidden_005f1.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gameBeanList[0].gameId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+    int _jspx_eval_html_005fhidden_005f1 = _jspx_th_html_005fhidden_005f1.doStartTag();
+    if (_jspx_th_html_005fhidden_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fvalue_005fproperty_005fnobody.reuse(_jspx_th_html_005fhidden_005f1);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fvalue_005fproperty_005fnobody.reuse(_jspx_th_html_005fhidden_005f1);
+    return false;
+  }
+
   private boolean _jspx_meth_html_005ftext_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -432,13 +461,13 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f0 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f0.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/gameUpdate/update.jsp(62,26) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(65,26) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setSize("146");
-    // /WEB-INF/view/gameUpdate/update.jsp(62,26) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(65,26) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setMaxlength("50");
-    // /WEB-INF/view/gameUpdate/update.jsp(62,26) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(65,26) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setProperty("gameTitle");
-    // /WEB-INF/view/gameUpdate/update.jsp(62,26) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(65,26) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gameBeanList[0].gameTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_html_005ftext_005f0 = _jspx_th_html_005ftext_005f0.doStartTag();
     if (_jspx_th_html_005ftext_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -457,13 +486,13 @@ public final class update_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f1 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f1.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/gameUpdate/update.jsp(65,25) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(68,25) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setSize("146");
-    // /WEB-INF/view/gameUpdate/update.jsp(65,25) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(68,25) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setMaxlength("50");
-    // /WEB-INF/view/gameUpdate/update.jsp(65,25) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(68,25) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setProperty("hardWare");
-    // /WEB-INF/view/gameUpdate/update.jsp(65,25) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/gameUpdate/update.jsp(68,25) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gameBeanList[0].hardWare}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_html_005ftext_005f1 = _jspx_th_html_005ftext_005f1.doStartTag();
     if (_jspx_th_html_005ftext_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

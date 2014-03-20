@@ -39,7 +39,7 @@
 		<!-- 入力チェック -->
 
 	</head>
-	<body>
+	<body bgcolor="#ffffff">
 		<h1 id = "title">ゲーム管理システム&gt;登録画面</h1>
 			<html:errors/>
 		<!-- メッセージの表示 -->

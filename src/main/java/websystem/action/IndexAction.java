@@ -62,6 +62,12 @@ public class IndexAction {
 		return "index.jsp";
 	}
 
+	/*初期表示*/
+	@Execute(validator = false, removeActionForm = true)
+	public String clear() {
+		return "index.jsp";
+	}
+
 	/*検索処理*/
 	@Execute(input = "index.jsp")
 	public String search() {
@@ -81,8 +87,11 @@ public class IndexAction {
 
 		searchCount = gameSearchCountService.searchGameCount(gameTitle, hardWare);
 
-		countmessage = "検索件数:" + searchCount + "件";
-
+		if (searchCount == 0) {
+			countmessage = "該当データがありません";
+		} else {
+			countmessage = "検索件数:" + searchCount + "件";
+		}
 		return "index.jsp";
 	}
 

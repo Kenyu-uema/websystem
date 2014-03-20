@@ -31,17 +31,18 @@
 		<!-- 入力チェック -->
 
 	</head>
-	<body>
+	<body bgcolor="#ffffff">
 		<!-- 検索条件の入力 -->
 		<h1 id = "title">ゲーム管理システム</h1>
 			<html:errors/>
 		<s:form method="post"   onsubmit = "return checkForm()">
 			<p>ゲームタイトル:<html:text size="100"  maxlength="50"  property="gameTitle" value=""/></p>
-			<p>ハードウェア &nbsp; :<html:text name="hardware" size="100"  maxlength="50"  property="hardWare" value=""/>
+			<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50"  property="hardWare" value=""/>
 
 		<!-- 検索・新規のボタン設定 -->
+			<s:submit property = "search"  clientValidate = "true" >検索</s:submit>
 			<s:submit property = "insert" >新規</s:submit>
-			<s:submit property = "search"  clientValidate = "true" >検索</s:submit></p>
+			<s:submit property = "clear" >クリア</s:submit></p>
 		</s:form>
 
 
@@ -67,7 +68,7 @@
 				<s:form method="post"   onsubmit = "return checkForm()">
 					<tr>
 		<!-- 検索結果の表示 -->
-						<td> <html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
+						<td  align="right"> <html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
 						<td> <html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
 						<td> ${f:h(m.hardWare)}</td>
 						<td><input type="submit" value="修正"   name="update"  ></td>

@@ -129,7 +129,7 @@ public final class insert_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<!-- 入力チェック -->\r\n");
       out.write("\r\n");
       out.write("\t</head>\r\n");
-      out.write("\t<body>\r\n");
+      out.write("\t<body bgcolor=\"#ffffff\">\r\n");
       out.write("\t\t<h1 id = \"title\">ゲーム管理システム&gt;登録画面</h1>\r\n");
       out.write("\t\t\t");
       if (_jspx_meth_html_005ferrors_005f0(_jspx_page_context))

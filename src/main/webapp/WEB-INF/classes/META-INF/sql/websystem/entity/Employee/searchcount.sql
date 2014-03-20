@@ -15,7 +15,7 @@ left join
 	on m_game.game_id = m_game_character.game_id
 where
 	game_title like  '%'||/*gameTitle*/'a'|| '%'
-and
+or
 	hardware like '%'||/*hardWare*/'a'|| '%'
 group by
 	m_game.game_id, game_title, hardware, impression

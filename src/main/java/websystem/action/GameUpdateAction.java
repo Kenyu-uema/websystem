@@ -59,19 +59,19 @@ public class GameUpdateAction {
 		try {
 			gameUpdateService.searchGame(gameId, gameTitle, hardWare, impression);
 		} catch (Exception e) {
-			error = "SQLが間違っているか、DBに接続できません。" + e.getMessage();
-			e.printStackTrace();
+			error = "SQLが間違っているか、DBに接続できません。";
+			message = error;
 		}
 
 		try {
 			gameBeanList = gameUpdateSearchService.searchGame(gameId);
 		} catch (Exception e) {
-			error = "SQLが間違っているか、DBに接続できません。" + e.getMessage();
-			e.printStackTrace();
+			error = "SQLが間違っているか、DBに接続できません。";
+			message = error;
 		}
 
 		if (error == "") {
-			message = gameTitle + "は登録されました。";
+			message = gameTitle + "は修正されました。";
 		}
 		return "update.jsp";
 	}
