@@ -28,7 +28,11 @@
 			
 		</style>
 
-		<!-- 入力チェック -->
+		<script type="text/javascript">
+		function btnTest_Click() {
+			setTimeout(function(){ showModalDialog(); }, 1);
+		}
+		</script>
 
 	</head>
 	<body bgcolor="#ffffff">
@@ -36,7 +40,7 @@
 		<h1 id = "title">ゲーム管理システム</h1>
 			<html:errors/>
 		<s:form method="post"   onsubmit = "return checkForm()">
-			<p>ゲームタイトル:<html:text size="100"  maxlength="50"  property="gameTitle" value=""/></p>
+			<p>ゲームタイトル:<html:text size="100"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
 			<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50"  property="hardWare" value=""/>
 
 		<!-- 検索・新規のボタン設定 -->

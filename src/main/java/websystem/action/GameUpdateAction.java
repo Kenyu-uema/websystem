@@ -44,7 +44,9 @@ public class GameUpdateAction {
 	/*検索画面へ*/
 	@Execute(validator = false, redirect = true)
 	public String result() {
-		return "/index";
+		gameId = gameUpdateConditionBeanForm.gameId;
+
+		return "/index?gameID=" + gameId;
 	}
 
 	/*更新機能*/
@@ -53,6 +55,7 @@ public class GameUpdateAction {
 		gameId = gameUpdateConditionBeanForm.gameId;
 		gameTitle = gameUpdateConditionBeanForm.gameTitle;
 		hardWare = gameUpdateConditionBeanForm.hardWare;
+
 		impression = gameUpdateConditionBeanForm.impression;
 
 		String error = "";

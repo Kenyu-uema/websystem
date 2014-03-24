@@ -28,15 +28,24 @@
  					border-spacing:0px;
 				}
 			
-				div.back {S
-					text-align: left;S
+				div.back {
+					text-align: left;
 					float: left;
 				}
 				div.update{
 					text-align: right;
 				}
+				
 			</style>
 
+			<script type="text/javascript">
+			  function DisableButton(b)
+			   {
+			      b.disabled = true;
+			      b.value = '修正';
+			      b.form.submit();
+			   }
+			</script>
 
 		</head>
 		<body bgcolor="#ffffff">
@@ -50,22 +59,22 @@
 			</c:if></p>
 
 			<!-- 修正用のボタン設定 -->
-			<s:form method="post"  onsubmit = "return checkForm()">
+			<s:form method="post"  onsubmit="disableSubmit(this)">
 				<div class="back"><a><s:link href="result">前の画面に戻ります </s:link></a></div>
-				<div class="update"><s:submit property ="update"  clientValidate = "true"  >修正</s:submit></div>
+				<div class="update"><s:submit property ="update"   clientValidate = "true" onclick="DisableButton(this);">修正</s:submit></div>
 				<br>
 
 			<!-- 修正内容の入力 -->
 				<table class="float-left" >
 					<html:hidden property="gameId" value="${gameBeanList[0].gameId}"/>
 					<tr>
-						<th>ゲームID</th><td> <html:hidden property="gameId" value="${gameBeanList[0].gameId}"/> ${gameBeanList[0].gameId}</td>
+						<th>ゲームID</th><td> <html:hidden property="gameId" value="${gameBeanList[0].gameId}" onchange="wupBtn()"/> ${gameBeanList[0].gameId}</td>
 					</tr>
 					<tr>
-						<th>ゲームタイトル</th><td><html:text size="146"  maxlength="50"   property = "gameTitle"  value="${gameBeanList[0].gameTitle}"/></td>
+						<th>ゲームタイトル</th><td><html:text size="146"  maxlength="50"  name="gameTitle" property = "gameTitle"  value="${gameBeanList[0].gameTitle}" onchange="wupBtn()"/></td>
 					</tr>
 					<tr>
-						<th>ハードウェア</th><td><html:text size="146"  maxlength="50"   property = "hardWare"  value="${gameBeanList[0].hardWare}"/></td>
+						<th>ハードウェア</th><td><html:text size="146"  maxlength="50"  name="hardWare"  property = "hardWare"  value="${gameBeanList[0].hardWare}"/></td>
 					</tr>
 					<tr>
 						<th>感想</th><td><textarea name="impression"  cols="100"  rows="10" maxlength="1000" >${gameBeanList[0].impression}</textarea></td>

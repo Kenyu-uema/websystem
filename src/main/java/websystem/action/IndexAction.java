@@ -59,12 +59,16 @@ public class IndexAction {
 	/*初期表示*/
 	@Execute(validator = false)
 	public String index() {
+		gameId = gameSearchconditionBeanForm.gameId;
+
+		gameBeanList = gameUpdateSearchService.searchGame(gameId);
 		return "index.jsp";
 	}
 
 	/*初期表示*/
 	@Execute(validator = false, removeActionForm = true)
 	public String clear() {
+
 		return "index.jsp";
 	}
 
