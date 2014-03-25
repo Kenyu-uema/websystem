@@ -50,7 +50,7 @@ public class GameUpdateAction {
 	}
 
 	/*更新機能*/
-	@Execute(input = "update.jsp")
+	@Execute(validator = true, input = "index")
 	public String update() {
 		gameId = gameUpdateConditionBeanForm.gameId;
 		gameTitle = gameUpdateConditionBeanForm.gameTitle;

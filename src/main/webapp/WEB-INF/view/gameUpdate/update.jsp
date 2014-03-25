@@ -1,8 +1,7 @@
 		<%@page pageEncoding="UTF-8"%>
 	<html>
 		<head>
-			<!-- 入力チェック -->
-			<html:javascript formName="gameUpdateActionForm_update"/>
+
 
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>ゲーム管理システム</title>
@@ -37,14 +36,14 @@
 				}
 				
 			</style>
+			
 
 			<script type="text/javascript">
-			  function DisableButton(b)
-			   {
-			      b.disabled = true;
-			      b.value = '修正';
-			      b.form.submit();
-			   }
+
+				function a(){
+				    	document.getElementById("update").disabled = true;
+				}
+
 			</script>
 
 		</head>
@@ -59,9 +58,9 @@
 			</c:if></p>
 
 			<!-- 修正用のボタン設定 -->
-			<s:form method="post"  onsubmit="disableSubmit(this)">
+			<s:form method="post" focus="gameTitle" onsubmit="a();return false;">
 				<div class="back"><a><s:link href="result">前の画面に戻ります </s:link></a></div>
-				<div class="update"><s:submit property ="update"   clientValidate = "true" onclick="DisableButton(this);">修正</s:submit></div>
+				<div class="update"><s:submit property ="update"  styleId= "update" clientValidate = "true" >修正</s:submit></div>
 				<br>
 
 			<!-- 修正内容の入力 -->
@@ -74,7 +73,7 @@
 						<th>ゲームタイトル</th><td><html:text size="146"  maxlength="50"  name="gameTitle" property = "gameTitle"  value="${gameBeanList[0].gameTitle}" onchange="wupBtn()"/></td>
 					</tr>
 					<tr>
-						<th>ハードウェア</th><td><html:text size="146"  maxlength="50"  name="hardWare"  property = "hardWare"  value="${gameBeanList[0].hardWare}"/></td>
+						<th>ハードウェア</th><td><html:text size="146"  maxlength="50"  name="hardWare"  property = "hardWare"  value="${gameBeanList[0].hardWare}" onchange="wupBtn()"/></td>
 					</tr>
 					<tr>
 						<th>感想</th><td><textarea name="impression"  cols="100"  rows="10" maxlength="1000" >${gameBeanList[0].impression}</textarea></td>

@@ -1,7 +1,5 @@
 <html>
 <head>
-	<!-- 入力チェック -->
-	<html:javascript formName="indexActionForm_search"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>ゲーム管理システム</title>
 
@@ -29,28 +27,40 @@
 		</style>
 
 		<script type="text/javascript">
+	
 		function btnTest_Click() {
-			setTimeout(function(){ showModalDialog(); }, 1);
+			showModalDialog();
 		}
+
+		function btnTest_Click() {
+			setTimeout(function(){ showModalDialog(); }, 0);
+		}
+
+		function btnTest_Click() {
+			setTimeout(function(){ showModalDialog(); }, 5000);
+		}
+		
 		</script>
 
 	</head>
 	<body bgcolor="#ffffff">
 		<!-- 検索条件の入力 -->
 		<h1 id = "title">ゲーム管理システム</h1>
-			<html:errors/>
-		<s:form method="post"   onsubmit = "return checkForm()">
+		
+		<s:form method="post"  focus="gameTitle"  onsubmit = "return checkForm()">
 			<p>ゲームタイトル:<html:text size="100"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
-			<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50"  property="hardWare" value=""/>
+			<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50" name="hardWare"  property="hardWare" value=""/>
 
 		<!-- 検索・新規のボタン設定 -->
 			<s:submit property = "search"  clientValidate = "true" >検索</s:submit>
 			<s:submit property = "insert" >新規</s:submit>
 			<s:submit property = "clear" >クリア</s:submit></p>
+			<html:errors/>
 		</s:form>
 
 
 		<!-- エラーの表示 -->
+		
 		<p><c:if test = "${message != null}" >
 				${message}
 			</c:if></p>
@@ -69,14 +79,14 @@
 				<p>${countmessage}</p>
 			</c:if>
 			<c:forEach var="m" items="${gameBeanList}">
-				<s:form method="post"   onsubmit = "return checkForm()">
+				<s:form method="post"   onsubmit = "btnTest_Click()">
 					<tr>
 		<!-- 検索結果の表示 -->
 						<td  align="right"> <html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
 						<td> <html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
 						<td> ${f:h(m.hardWare)}</td>
 						<td><input type="submit" value="修正"   name="update"  ></td>
-						<td><input type="submit"  value="削除" name="delete"  onclick="return confirm('${m.gameTitle}削除しますか?');"/></td>
+						<td><input type="submit"  value="削除" name="delete"  onclick="btnTest_Click();return confirm('${m.gameTitle}削除しますか?');btnTest_Click()"/></td>
 					</tr>
 				</s:form>
 			</c:forEach>
