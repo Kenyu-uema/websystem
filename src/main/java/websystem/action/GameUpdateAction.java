@@ -76,6 +76,6 @@ public class GameUpdateAction {
 		if (error == "") {
 			message = gameTitle + "は修正されました。";
 		}
-		return "update.jsp";
+		return "update2.jsp";
 	}
 }

@@ -1,95 +1,103 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>ゲーム管理システム</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>ゲーム管理システム</title>
 
 		<!-- スタイルの設定 -->
-		<style type=text/css>
-			#title{background-color:#00ffff;}
-			tr th {
-				background-color:#00ffff;
-				color:black;
-				font-weight:bold;
-			}
-			tr td {
-				background-color:white;
-				color:green;
-			}
-			table,th,td {
-				border:solid thin;
-			}
-			.float-left {
-				margin-left: auto;
- 				margin-right: auto;
- 				border-spacing:0px;
-			}
-			
-		</style>
-
-		<script type="text/javascript">
-	
-		function btnTest_Click() {
-			showModalDialog();
-		}
-
-		function btnTest_Click() {
-			setTimeout(function(){ showModalDialog(); }, 0);
-		}
-
-		function btnTest_Click() {
-			setTimeout(function(){ showModalDialog(); }, 5000);
-		}
-		
-		</script>
+			<style type=text/css>
+				#title{background-color:#00ffff;}
+				tr th {
+					background-color:#00ffff;
+					color:black;
+					font-weight:bold;
+				}
+				tr td {
+					background-color:white;
+					color:green;
+				}
+				table,th,td {
+					border:solid thin;
+				}
+				.float-left {
+					margin-left: auto;
+					margin-right: auto;
+					border-spacing:0px;
+					width="1010";
+					frame="void"
+				}
+				.bodyfloat-left {
+					margin-left: auto;
+					margin-right: auto;
+					border-spacing:0px;
+					width="1010";
+					frame="void"
+				}
+				
+			</style>
 
 	</head>
+
 	<body bgcolor="#ffffff">
 		<!-- 検索条件の入力 -->
-		<h1 id = "title">ゲーム管理システム</h1>
-		
-		<s:form method="post"  focus="gameTitle"  onsubmit = "return checkForm()">
-			<p>ゲームタイトル:<html:text size="100"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
-			<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50" name="hardWare"  property="hardWare" value=""/>
+			<h1 id = "title">ゲーム管理システム</h1>
+				<s:form method="post"  focus="gameTitle" >
+					<p>ゲームタイトル:<html:text size="100"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
+					<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50" name="hardWare"  property="hardWare" value=""/>
 
 		<!-- 検索・新規のボタン設定 -->
-			<s:submit property = "search"  clientValidate = "true" >検索</s:submit>
-			<s:submit property = "insert" >新規</s:submit>
-			<s:submit property = "clear" >クリア</s:submit></p>
-			<html:errors/>
-		</s:form>
-
+					<span id="button"  >
+						<s:submit property = "search"  clientValidate = "true" >検索</s:submit>
+						<s:submit property = "insert" >新規</s:submit>
+						<s:submit property = "clear" >クリア</s:submit>
+					</span></p>
+					<html:errors/>
+				</s:form>
 
 		<!-- エラーの表示 -->
-		
-		<p><c:if test = "${message != null}" >
+			<p><c:if test = "${message != null}" >
 				${message}
 			</c:if></p>
-		<p><c:if test = "${error != null}">
+			<p><c:if test = "${error != null}">
 				${error}
 			</c:if></p>
-		<hr>
+			<hr>
 
-		<table class="float-left" >
-			<caption>ゲームマスタ一覧</caption>
-			<tr>
-				<th>No.</th><th>ゲームタイトル</th><th>ハードウェア</th><th> &nbsp;</th><th> &nbsp;</th>
-			</tr>
-
+		<!-- 検索表のヘッダ -->
+			<table  class="float-left" >
+				<caption>ゲームマスタ一覧</caption>
+					<thead>
+						<tr><th width="30" >No.</th><th width="400">ゲームタイトル</th><th width="400">ハードウェア</th><th width="58"> &nbsp;</th><th width="82"> &nbsp;</th></tr>
+					</thead>
+					<tfoot>
+					</tfoot>
+		<!-- 検索数の表示-->
 			<c:if test="${searchCount != 0}">
 				<p>${countmessage}</p>
 			</c:if>
-			<c:forEach var="m" items="${gameBeanList}">
-				<s:form method="post"   onsubmit = "btnTest_Click()">
-					<tr>
+
+
 		<!-- 検索結果の表示 -->
-						<td  align="right"> <html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
-						<td> <html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
-						<td> ${f:h(m.hardWare)}</td>
-						<td><input type="submit" value="修正"   name="update"  ></td>
-						<td><input type="submit"  value="削除" name="delete"  onclick="btnTest_Click();return confirm('${m.gameTitle}削除しますか?');btnTest_Click()"/></td>
-					</tr>
-				</s:form>
-			</c:forEach>
-		</table>
+	<TD colspan="5">
+		<div style="height:220px; overflow:auto;">
+			<table  class="bodyfloat-left ">
+			<colgroup span="4" width="40"></colgroup>
+			<colgroup span="1" width="80"></colgroup>
+				<c:forEach var="m" items="${gameBeanList}">
+					<s:form method="post" >
+						<tbody>
+							<tr>
+								<td width="30"  align="right"><html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
+								<td width="790"><html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
+								<td width="850">${f:h(m.hardWare)}</td>
+								<td width="90"><input type="submit" value="修正"   name="update"  ></td>
+								<td width="20"><input type="submit"  value="削除" name="delete"  onclick="return confirm('${m.gameTitle}削除しますか?');btnTest_Click()"/><td>
+							</tr>
+						</tbody>
+					</s:form>
+				</c:forEach>
+			</table>
+		</div>
+	</TD>
+	</table>
 	</body>
 </html>
