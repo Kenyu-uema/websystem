@@ -124,15 +124,20 @@ static {
       out.write("\t\t\t\t\tmargin-left: auto;\r\n");
       out.write("\t\t\t\t\tmargin-right: auto;\r\n");
       out.write("\t\t\t\t\tborder-spacing:0px;\r\n");
-      out.write("\t\t\t\t\twidth=\"1010\";\r\n");
+      out.write("\t\t\t\t\twidth=\"860\";\r\n");
       out.write("\t\t\t\t\tframe=\"void\"\r\n");
+      out.write("\t\t\t\t\tborder-collapse:separate;\r\n");
+      out.write("\t\t\t\t\tfont-size: 16px;\r\n");
+      out.write("\t\t\t\t}\r\n");
       out.write("\t\t\t\t}\r\n");
       out.write("\t\t\t\t.bodyfloat-left {\r\n");
       out.write("\t\t\t\t\tmargin-left: auto;\r\n");
       out.write("\t\t\t\t\tmargin-right: auto;\r\n");
       out.write("\t\t\t\t\tborder-spacing:0px;\r\n");
-      out.write("\t\t\t\t\twidth=\"1010\";\r\n");
+      out.write("\t\t\t\t\twidth=\"820\";\r\n");
       out.write("\t\t\t\t\tframe=\"void\"\r\n");
+      out.write("\t\t\t\t\tborder-collapse:separate;\r\n");
+      out.write("\t\t\t\t\tfont-size: 16px;\r\n");
       out.write("\t\t\t\t}\r\n");
       out.write("\t\t\t\t\r\n");
       out.write("\t\t\t</style>\r\n");
@@ -170,7 +175,7 @@ static {
       out.write("\t\t\t<table  class=\"float-left\" >\r\n");
       out.write("\t\t\t\t<caption>ゲームマスタ一覧</caption>\r\n");
       out.write("\t\t\t\t\t<thead>\r\n");
-      out.write("\t\t\t\t\t\t<tr><th width=\"30\" >No.</th><th width=\"400\">ゲームタイトル</th><th width=\"400\">ハードウェア</th><th width=\"58\"> &nbsp;</th><th width=\"82\"> &nbsp;</th></tr>\r\n");
+      out.write("\t\t\t\t\t\t<tr><th width=\"20\" >No.</th><th width=\"380\">ゲームタイトル</th><th width=\"380\">ハードウェア</th><th width=\"130\"> &nbsp;</th></tr>\r\n");
       out.write("\t\t\t\t\t</thead>\r\n");
       out.write("\t\t\t\t\t<tfoot>\r\n");
       out.write("\t\t\t\t\t</tfoot>\r\n");
@@ -183,10 +188,10 @@ static {
       out.write("\r\n");
       out.write("\t\t<!-- 検索結果の表示 -->\r\n");
       out.write("\t<TD colspan=\"5\">\r\n");
-      out.write("\t\t<div style=\"height:220px; overflow:auto;\">\r\n");
+      out.write("\t\t<div style=\"height:215px; overflow:auto;\">\r\n");
       out.write("\t\t\t<table  class=\"bodyfloat-left \">\r\n");
-      out.write("\t\t\t<colgroup span=\"4\" width=\"40\"></colgroup>\r\n");
-      out.write("\t\t\t<colgroup span=\"1\" width=\"80\"></colgroup>\r\n");
+      out.write("\t\t\t<colgroup span=\"4\" ></colgroup>\r\n");
+      out.write("\t\t\t<colgroup span=\"1\"  width=\"30\"></colgroup>\r\n");
       out.write("\t\t\t\t");
       if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
         return;
@@ -218,9 +223,9 @@ static {
     org.seasar.struts.taglib.S2FormTag _jspx_th_s_005fform_005f0 = (org.seasar.struts.taglib.S2FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005ffocus.get(org.seasar.struts.taglib.S2FormTag.class);
     _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f0.setParent(null);
-    // /WEB-INF/view/index.jsp(51,4) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(56,4) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setMethod("post");
-    // /WEB-INF/view/index.jsp(51,4) name = focus type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(56,4) name = focus type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setFocus("gameTitle");
     int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -276,15 +281,15 @@ static {
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f0 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fname_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f0.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/index.jsp(52,16) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(57,16) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setSize("100");
-    // /WEB-INF/view/index.jsp(52,16) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(57,16) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setMaxlength("50");
-    // /WEB-INF/view/index.jsp(52,16) name = name type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(57,16) name = name type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setName("gameTitle");
-    // /WEB-INF/view/index.jsp(52,16) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(57,16) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setProperty("gameTitle");
-    // /WEB-INF/view/index.jsp(52,16) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(57,16) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f0.setValue("");
     int _jspx_eval_html_005ftext_005f0 = _jspx_th_html_005ftext_005f0.doStartTag();
     if (_jspx_th_html_005ftext_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -303,17 +308,17 @@ static {
     org.apache.struts.taglib.html.TextTag _jspx_th_html_005ftext_005f1 = (org.apache.struts.taglib.html.TextTag) _005fjspx_005ftagPool_005fhtml_005ftext_0026_005fvalue_005fsize_005fproperty_005fonkeydown_005fname_005fmaxlength_005fnobody.get(org.apache.struts.taglib.html.TextTag.class);
     _jspx_th_html_005ftext_005f1.setPageContext(_jspx_page_context);
     _jspx_th_html_005ftext_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/index.jsp(53,23) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(58,23) name = size type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setSize("100");
-    // /WEB-INF/view/index.jsp(53,23) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(58,23) name = maxlength type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setMaxlength("50");
-    // /WEB-INF/view/index.jsp(53,23) name = name type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(58,23) name = name type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setName("hardWare");
-    // /WEB-INF/view/index.jsp(53,23) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(58,23) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setProperty("hardWare");
-    // /WEB-INF/view/index.jsp(53,23) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(58,23) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setValue("");
-    // /WEB-INF/view/index.jsp(53,23) name = onkeydown type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(58,23) name = onkeydown type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005ftext_005f1.setOnkeydown("go();");
     int _jspx_eval_html_005ftext_005f1 = _jspx_th_html_005ftext_005f1.doStartTag();
     if (_jspx_th_html_005ftext_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -332,9 +337,9 @@ static {
     org.seasar.struts.taglib.S2SubmitTag _jspx_th_s_005fsubmit_005f0 = (org.seasar.struts.taglib.S2SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty_005fclientValidate.get(org.seasar.struts.taglib.S2SubmitTag.class);
     _jspx_th_s_005fsubmit_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fsubmit_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/index.jsp(57,6) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(62,6) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fsubmit_005f0.setProperty("search");
-    // /WEB-INF/view/index.jsp(57,6) name = clientValidate type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(62,6) name = clientValidate type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fsubmit_005f0.setClientValidate(true);
     int _jspx_eval_s_005fsubmit_005f0 = _jspx_th_s_005fsubmit_005f0.doStartTag();
     if (_jspx_eval_s_005fsubmit_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -370,7 +375,7 @@ static {
     org.seasar.struts.taglib.S2SubmitTag _jspx_th_s_005fsubmit_005f1 = (org.seasar.struts.taglib.S2SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty.get(org.seasar.struts.taglib.S2SubmitTag.class);
     _jspx_th_s_005fsubmit_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fsubmit_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/index.jsp(58,6) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(63,6) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fsubmit_005f1.setProperty("insert");
     int _jspx_eval_s_005fsubmit_005f1 = _jspx_th_s_005fsubmit_005f1.doStartTag();
     if (_jspx_eval_s_005fsubmit_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -406,7 +411,7 @@ static {
     org.seasar.struts.taglib.S2SubmitTag _jspx_th_s_005fsubmit_005f2 = (org.seasar.struts.taglib.S2SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fproperty.get(org.seasar.struts.taglib.S2SubmitTag.class);
     _jspx_th_s_005fsubmit_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fsubmit_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /WEB-INF/view/index.jsp(59,6) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(64,6) name = property type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fsubmit_005f2.setProperty("clear");
     int _jspx_eval_s_005fsubmit_005f2 = _jspx_th_s_005fsubmit_005f2.doStartTag();
     if (_jspx_eval_s_005fsubmit_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -460,7 +465,7 @@ static {
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f0.setParent(null);
-    // /WEB-INF/view/index.jsp(65,6) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(70,6) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${message != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
     if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -491,7 +496,7 @@ static {
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f1.setParent(null);
-    // /WEB-INF/view/index.jsp(68,6) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(73,6) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${error != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f1 = _jspx_th_c_005fif_005f1.doStartTag();
     if (_jspx_eval_c_005fif_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -522,7 +527,7 @@ static {
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f2.setParent(null);
-    // /WEB-INF/view/index.jsp(82,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(87,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${searchCount != 0}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f2 = _jspx_th_c_005fif_005f2.doStartTag();
     if (_jspx_eval_c_005fif_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -553,9 +558,9 @@ static {
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/view/index.jsp(93,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(98,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("m");
-    // /WEB-INF/view/index.jsp(93,4) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(98,4) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gameBeanList}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -595,7 +600,7 @@ static {
     org.seasar.struts.taglib.S2FormTag _jspx_th_s_005fform_005f1 = (org.seasar.struts.taglib.S2FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod.get(org.seasar.struts.taglib.S2FormTag.class);
     _jspx_th_s_005fform_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/view/index.jsp(94,5) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(99,5) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f1.setMethod("post");
     int _jspx_eval_s_005fform_005f1 = _jspx_th_s_005fform_005f1.doStartTag();
     if (_jspx_eval_s_005fform_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -603,22 +608,22 @@ static {
         out.write("\r\n");
         out.write("\t\t\t\t\t\t<tbody>\r\n");
         out.write("\t\t\t\t\t\t\t<tr>\r\n");
-        out.write("\t\t\t\t\t\t\t\t<td width=\"30\"  align=\"right\">");
+        out.write("\t\t\t\t\t\t\t\t<td width=\"25\" align=\"right\">");
         if (_jspx_meth_html_005fhidden_005f0(_jspx_th_s_005fform_005f1, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
           return true;
         out.write(' ');
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(m.gameId)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
         out.write("</td>\r\n");
-        out.write("\t\t\t\t\t\t\t\t<td width=\"790\">");
+        out.write("\t\t\t\t\t\t\t\t<td width=\"415\">");
         if (_jspx_meth_html_005fhidden_005f1(_jspx_th_s_005fform_005f1, _jspx_page_context, _jspx_push_body_count_c_005fforEach_005f0))
           return true;
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(m.gameTitle)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
         out.write("</td>\r\n");
-        out.write("\t\t\t\t\t\t\t\t<td width=\"850\">");
+        out.write("\t\t\t\t\t\t\t\t<td width=\"415\">");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${f:h(m.hardWare)}", java.lang.String.class, (PageContext)_jspx_page_context, _jspx_fnmap_0, false));
         out.write("</td>\r\n");
-        out.write("\t\t\t\t\t\t\t\t<td width=\"90\"><input type=\"submit\" value=\"修正\"   name=\"update\"  ></td>\r\n");
-        out.write("\t\t\t\t\t\t\t\t<td width=\"20\"><input type=\"submit\"  value=\"削除\" name=\"delete\"  onclick=\"return confirm('");
+        out.write("\t\t\t\t\t\t\t\t<td width=\"50\"><input type=\"submit\" value=\"修正\"   name=\"update\"  ></td>\r\n");
+        out.write("\t\t\t\t\t\t\t\t<td width=\"65\"><input type=\"submit\"  value=\"削除\" name=\"delete\"  onclick=\"return confirm('");
         out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${m.gameTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("削除しますか?');btnTest_Click()\"/><td>\r\n");
         out.write("\t\t\t\t\t\t\t</tr>\r\n");
@@ -645,9 +650,9 @@ static {
     org.apache.struts.taglib.html.HiddenTag _jspx_th_html_005fhidden_005f0 = (org.apache.struts.taglib.html.HiddenTag) _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fvalue_005fproperty_005fnobody.get(org.apache.struts.taglib.html.HiddenTag.class);
     _jspx_th_html_005fhidden_005f0.setPageContext(_jspx_page_context);
     _jspx_th_html_005fhidden_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f1);
-    // /WEB-INF/view/index.jsp(97,38) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(102,37) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005fhidden_005f0.setProperty("gameId");
-    // /WEB-INF/view/index.jsp(97,38) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(102,37) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005fhidden_005f0.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${m.gameId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_html_005fhidden_005f0 = _jspx_th_html_005fhidden_005f0.doStartTag();
     if (_jspx_th_html_005fhidden_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -666,9 +671,9 @@ static {
     org.apache.struts.taglib.html.HiddenTag _jspx_th_html_005fhidden_005f1 = (org.apache.struts.taglib.html.HiddenTag) _005fjspx_005ftagPool_005fhtml_005fhidden_0026_005fvalue_005fproperty_005fnobody.get(org.apache.struts.taglib.html.HiddenTag.class);
     _jspx_th_html_005fhidden_005f1.setPageContext(_jspx_page_context);
     _jspx_th_html_005fhidden_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f1);
-    // /WEB-INF/view/index.jsp(98,24) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(103,24) name = property type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005fhidden_005f1.setProperty("gameTitle");
-    // /WEB-INF/view/index.jsp(98,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/view/index.jsp(103,24) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_html_005fhidden_005f1.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${m.gameTitle}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
     int _jspx_eval_html_005fhidden_005f1 = _jspx_th_html_005fhidden_005f1.doStartTag();
     if (_jspx_th_html_005fhidden_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

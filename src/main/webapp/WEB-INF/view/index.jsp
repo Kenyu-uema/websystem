@@ -22,15 +22,20 @@
 					margin-left: auto;
 					margin-right: auto;
 					border-spacing:0px;
-					width="1010";
+					width="860";
 					frame="void"
+					border-collapse:separate;
+					font-size: 16px;
+				}
 				}
 				.bodyfloat-left {
 					margin-left: auto;
 					margin-right: auto;
 					border-spacing:0px;
-					width="1010";
+					width="820";
 					frame="void"
+					border-collapse:separate;
+					font-size: 16px;
 				}
 				
 			</style>
@@ -74,7 +79,7 @@
 			<table  class="float-left" >
 				<caption>ゲームマスタ一覧</caption>
 					<thead>
-						<tr><th width="30" >No.</th><th width="400">ゲームタイトル</th><th width="400">ハードウェア</th><th width="58"> &nbsp;</th><th width="82"> &nbsp;</th></tr>
+						<tr><th width="20" >No.</th><th width="380">ゲームタイトル</th><th width="380">ハードウェア</th><th width="130"> &nbsp;</th></tr>
 					</thead>
 					<tfoot>
 					</tfoot>
@@ -86,19 +91,19 @@
 
 		<!-- 検索結果の表示 -->
 	<TD colspan="5">
-		<div style="height:220px; overflow:auto;">
+		<div style="height:215px; overflow:auto;">
 			<table  class="bodyfloat-left ">
-			<colgroup span="4" width="40"></colgroup>
-			<colgroup span="1" width="80"></colgroup>
+			<colgroup span="4" ></colgroup>
+			<colgroup span="1"  width="30"></colgroup>
 				<c:forEach var="m" items="${gameBeanList}">
 					<s:form method="post" >
 						<tbody>
 							<tr>
-								<td width="30"  align="right"><html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
-								<td width="790"><html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
-								<td width="850">${f:h(m.hardWare)}</td>
-								<td width="90"><input type="submit" value="修正"   name="update"  ></td>
-								<td width="20"><input type="submit"  value="削除" name="delete"  onclick="return confirm('${m.gameTitle}削除しますか?');btnTest_Click()"/><td>
+								<td width="25" align="right"><html:hidden property="gameId" value="${m.gameId}"/> ${f:h(m.gameId)}</td>
+								<td width="415"><html:hidden property="gameTitle" value="${m.gameTitle}"/>${f:h(m.gameTitle)}</td>
+								<td width="415">${f:h(m.hardWare)}</td>
+								<td width="50"><input type="submit" value="修正"   name="update"  ></td>
+								<td width="65"><input type="submit"  value="削除" name="delete"  onclick="return confirm('${m.gameTitle}削除しますか?');btnTest_Click()"/><td>
 							</tr>
 						</tbody>
 					</s:form>
