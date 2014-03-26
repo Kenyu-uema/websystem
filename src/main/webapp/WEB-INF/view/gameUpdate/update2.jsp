@@ -56,7 +56,7 @@
 
 			<!-- 修正用のボタン設定 -->
 			<s:form method="post" focus="gameTitle" onsubmit="a();return false;">
-				<div class="back"><a><s:link href="result">前の画面に戻ります </s:link></a></div>
+				<div class="back"><a><s:link tabindex="5"  href="result">前の画面に戻ります </s:link></a></div>
 				<div class="update"><s:submit property ="update"  styleId= "update" clientValidate = "true" disabled = "true" >修正</s:submit></div>
 				<br>
 

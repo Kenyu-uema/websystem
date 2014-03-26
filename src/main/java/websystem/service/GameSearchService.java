@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.seasar.extension.jdbc.JdbcManager;
+import org.seasar.extension.jdbc.util.LikeUtil;
 
 import websystem.dto.GameBeanDto;
 import websystem.dto.GameBeanParam;
@@ -19,8 +20,8 @@ public class GameSearchService {
 	public List<GameBeanDto> searchGameList(String gameTitle, String hardWare) {
 
 		GameBeanParam param = new GameBeanParam();
-		param.gameTitle = gameTitle;
-		param.hardWare = hardWare;
+		param.gameTitle = LikeUtil.escapeWildcard(gameTitle);
+		param.hardWare = LikeUtil.escapeWildcard(hardWare);
 
 		return jdbcManager.selectBySqlFile(GameBeanDto.class, SQL_FILE, param)
 				.getResultList();

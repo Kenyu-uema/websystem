@@ -35,6 +35,14 @@
 				
 			</style>
 
+			<script type="text/javascript">
+
+				function go(){
+					//EnterキーならSubmit
+					if(window.event.keyCode==13)document.getElementById(update).submit();
+				}
+			</script>
+
 	</head>
 
 	<body bgcolor="#ffffff">
@@ -42,7 +50,7 @@
 			<h1 id = "title">ゲーム管理システム</h1>
 				<s:form method="post"  focus="gameTitle" >
 					<p>ゲームタイトル:<html:text size="100"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
-					<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50" name="hardWare"  property="hardWare" value=""/>
+					<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50" name="hardWare"  property="hardWare" value=""  onkeydown="go();"/>
 
 		<!-- 検索・新規のボタン設定 -->
 					<span id="button"  >

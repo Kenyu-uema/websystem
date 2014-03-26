@@ -3,6 +3,7 @@ package websystem.service;
 import javax.annotation.Resource;
 
 import org.seasar.extension.jdbc.JdbcManager;
+import org.seasar.extension.jdbc.util.LikeUtil;
 
 import websystem.dto.GameBeanParam;
 
@@ -18,8 +19,8 @@ public class GameSearchCountService {
 	public long searchGameCount(String gameTitle, String hardWare) {
 
 		GameBeanParam param = new GameBeanParam();
-		param.gameTitle = gameTitle;
-		param.hardWare = hardWare;
+		param.gameTitle = LikeUtil.escapeWildcard(gameTitle);
+		param.hardWare = LikeUtil.escapeWildcard(hardWare);
 
 		return count = jdbcManager.getCountBySqlFile(SQL_FILE, param);
 	}
