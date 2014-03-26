@@ -37,7 +37,11 @@
 					border-collapse:separate;
 					font-size: 16px;
 				}
-				
+
+				.body{
+					width:1130;
+					margin:0 auto;
+				}
 			</style>
 
 			<script type="text/javascript">
@@ -50,19 +54,19 @@
 
 	</head>
 
-	<body bgcolor="#ffffff">
+	<body  bgcolor="#ffffff">
 		<!-- 検索条件の入力 -->
 			<h1 id = "title">ゲーム管理システム</h1>
 				<s:form method="post"  focus="gameTitle" >
-					<p>ゲームタイトル:<html:text size="100"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
-					<p>ハードウェア &nbsp; :<html:text size="100"  maxlength="50" name="hardWare"  property="hardWare" value=""  onkeydown="go();"/>
+					<div class =  "body"><p>ゲームタイトル:<html:text size="80%"  maxlength="50"   name="gameTitle" property="gameTitle" value=""/></p>
+					<p>ハードウェア &nbsp; :<html:text size="80%"  maxlength="50" name="hardWare"  property="hardWare" value=""  onkeydown="go();"/>
 
 		<!-- 検索・新規のボタン設定 -->
 					<span id="button"  >
 						<s:submit property = "search"  clientValidate = "true" >検索</s:submit>
 						<s:submit property = "insert" >新規</s:submit>
 						<s:submit property = "clear" >クリア</s:submit>
-					</span></p>
+					</span></p></div>
 					<html:errors/>
 				</s:form>
 

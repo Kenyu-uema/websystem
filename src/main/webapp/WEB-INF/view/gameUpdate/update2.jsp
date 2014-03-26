@@ -34,7 +34,7 @@
 				div.update{
 					text-align: right;
 				}
-				
+
 			</style>
 			
 
@@ -44,7 +44,7 @@
 			</script>
 
 		</head>
-		<body bgcolor="#ffffff">
+		<body class= "body"  bgcolor="#ffffff">
 			<h1 id = "title">ゲーム管理システム&gt;修正画面</h1>
 				<html:errors/>
 			<p><c:if test = "${message != null}" >

@@ -32,15 +32,16 @@
 			div.insert{
 				text-align: right;
 			}
+
 		</style>
 
 		<!-- 入力チェック -->
 
 	</head>
-	<body bgcolor="#ffffff">
+	<body class= "body"  bgcolor="#ffffff">
 		<h1 id = "title">ゲーム管理システム&gt;登録画面</h1>
-			<html:errors/>
 		<!-- メッセージの表示 -->
+			<html:errors/>
 			<p><c:if test = "${message != null}" >
 				${message}
 			</c:if></p>
