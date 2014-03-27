@@ -27,7 +27,6 @@
 					border-collapse:separate;
 					font-size: 16px;
 				}
-				}
 				.bodyfloat-left {
 					margin-left: auto;
 					margin-right: auto;
@@ -37,11 +36,9 @@
 					border-collapse:separate;
 					font-size: 16px;
 				}
-
 				.body{
 					width:1130;
 					margin:0 auto;
-				}
 			</style>
 
 			<script type="text/javascript">
@@ -95,7 +92,7 @@
 
 		<!-- 検索結果の表示 -->
 	<TD colspan="5">
-		<div style="height:215px; overflow:auto;">
+		<div style="height:222px; overflow:auto;">
 			<table  class="bodyfloat-left ">
 			<colgroup span="4" ></colgroup>
 			<colgroup span="1"  width="30"></colgroup>

@@ -2,4 +2,4 @@ delete
 from
 	m_game
 where
-	game_id = /*gameId*/'%param.gameId%'
+	game_id = /*gameId*/'1'
